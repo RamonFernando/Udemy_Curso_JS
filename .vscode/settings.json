@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        ".",
+        "algoritmos-Java\\package"
+    ],
+    "java.project.referencedLibraries": [],
+    "git.ignoreLimitWarning": true
+}
