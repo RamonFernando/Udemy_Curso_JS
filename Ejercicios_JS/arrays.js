@@ -99,7 +99,8 @@ function pedirPrecio() {
 
 // Iniciamos el proceso
 pedirPrecio();
-
+// Cerramos la interfaz de lectura
+rl.close();
 
 // ejercicio 7 y 8
 
