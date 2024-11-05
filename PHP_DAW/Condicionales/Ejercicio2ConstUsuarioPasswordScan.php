@@ -12,8 +12,8 @@ aparecerá el mensaje "Acceso permitido". En caso contrario se escribirá "Acces
 
 
   // Crear las 2 constantes
-  define("NOMBRE_REQUERIDO", "pepe");
-  define("PASSWORD_REQUERIDO", "1234");
+define("NOMBRE_REQUERIDO", "pepe");
+define("PASSWORD_REQUERIDO", "1234");
 
   // Pedir el nombre de usuario y la contraseña
 ?>
@@ -26,22 +26,21 @@ aparecerá el mensaje "Acceso permitido". En caso contrario se escribirá "Acces
     <style>
         body{
             text-align: center;
-            font-family: 'Gill Sans MT'; 
-            background-color: #ded6c9; 
+            font-family: 'Gill Sans MT';
+            background-color: #ded6c9;
             padding: 20px";
         }
     </style>
 </head>
 <body>
-        <h2>Ejercicio 2</h2>
-
-        <form action="Ejercicio2Condicionales.php" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" ><br><br>
-            <label for="password">Password:</label>
-            <input type="password" name="password" ><br><br>
-            <input type="submit" value="Enviar">
-        </form>
+    <h2>Ejercicio 2</h2>
+    <form action="Ejercicio2Condicionales.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" ><br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" ><br><br>
+        <input type="submit" value="Enviar">
+    </form>
 <?php
     
     if(isset($_POST['nombre']) && isset($_POST['password'])) {
