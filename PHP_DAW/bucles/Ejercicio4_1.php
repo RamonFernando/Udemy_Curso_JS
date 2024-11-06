@@ -60,10 +60,10 @@
 
             // Comprobamos si el número es correcto
             if ($numero == NUMERO_SECRETO) {
-                echo "<p>Has acertado el número en el intento {$_SESSION['intentos']}</p>";
+                echo "<p>Has acertado el número en el intento {$_SESSION['intentos']} No: {$numero}</p>";
                 session_unset(); // Reiniciamos la sesión
                 break;
-            } elseif ($_SESSION['intentos'] > NUMERO_INTENTOS) {
+            } elseif ($_SESSION['intentos'] >= NUMERO_INTENTOS) {
                 echo "<p>Has perdido. El número correcto era: " . NUMERO_SECRETO . ".</p>";
                 session_unset();
                 break;
