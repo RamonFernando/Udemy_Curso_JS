@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "algoritmosJava",
+            "request": "launch",
+            "mainClass": "algoritmosJava",
+            "projectName": "curso_udemy_JS_40d7c31"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",

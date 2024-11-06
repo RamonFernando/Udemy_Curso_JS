@@ -12,8 +12,8 @@
     <style>
         body{
             text-align: center;
-            font-family: 'Gill Sans MT'; 
-            background-color: #7b7b7a; 
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
             padding: 20px";
         }
     </style>
@@ -28,7 +28,7 @@
     </form>
     <?php
     $numero_aleatorio = rand(1,4);
-    $intentos = 0;
+    $intentos = 1;
     $esIgual = false;
     if (isset($_POST['numero'])) {
         $numero = $_POST['numero']; // introducimos un numero entre 1 y 10
@@ -38,7 +38,8 @@
                 echo "<p>HAS ACERTADO No al ". $intentos . " intento No: " . $numero_aleatorio . "</p>";
                 session_unset();
                 break;
-            } elseif($intentos == 3) {
+            }
+            if($intentos == 3) {
                 echo "<p>HAS PERDIDO No: {$intentos} el numero era {$numero_aleatorio} </p>";
                 session_unset();
                 break;
@@ -47,6 +48,7 @@
                 $intentos++;
                 break;
             }
+            
         }
     echo "<br>Finalizando programa...";
 }
