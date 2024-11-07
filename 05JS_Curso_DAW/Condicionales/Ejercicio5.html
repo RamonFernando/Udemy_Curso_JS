@@ -16,7 +16,7 @@ escribe otro número, el mensaje se mostrará en español.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios</title>
     <style>
-        body{
+        body{s
             text-align: center;
             font-family: 'Gill Sans MT';
             background-color: #ac9776;
@@ -28,7 +28,25 @@ escribe otro número, el mensaje se mostrará en español.
     <h2>Ejercicios 5</h2>
     <p>...</p>
         <script>
-            
+            alert( "Menu de Idiomas\n(1) Francés\n(2) Inglés\n(3) Alemán\n(4) Italiano");
+            let idioma = parseInt(prompt("Elige un idioma"));
+            switch(idioma){
+                case 1:
+                    alert("Buenos días");
+                    break;
+                case 2:
+                    alert("Good morning");
+                    break;
+                case 3:
+                    alert("Guten Morgen");
+                    break;
+                case 4:
+                    alert("Buongiorno");
+                    break;
+                default:
+                    alert("Buenos días");
+                break;
+            }
         </script>
 
     <p>FIN</p>
