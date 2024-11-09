@@ -25,7 +25,10 @@
             for(let i = 0; i < 5; i++){
                 
                 if(i < 4){
-                    (num == numero_secreto)? alert("Has acertado al " + (i+1) + " intento"): alert("Has fallado te quedan " + (4 - i) + " intento"); num = prompt("Introduce un numero");
+                    // Operador Ternario
+                    (num == numero_secreto)? alert("Has acertado al " + (i+1) + " intento"): 
+                    alert("Has fallado te quedan " + (4 - i) + " intento"); 
+                    num = prompt("Introduce un numero");
                 }else{
                     alert("Has perdido, fin del juego");
                 }

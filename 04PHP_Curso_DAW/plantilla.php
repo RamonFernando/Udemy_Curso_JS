@@ -13,7 +13,7 @@
         body{
             text-align: center;
             font-family: 'Gill Sans MT'; 
-            background-color: #ded6c9; 
+            background-color: #7b7b7a; 
             padding: 20px";
         }
     </style>
