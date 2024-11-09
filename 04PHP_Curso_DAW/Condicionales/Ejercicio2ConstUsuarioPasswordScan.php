@@ -34,11 +34,11 @@ define("PASSWORD_REQUERIDO", "1234");
 </head>
 <body>
     <h2>Ejercicio 2</h2>
-    <form action="Ejercicio2Condicionales.php" method="post">
+    <form action="Ejercicio2ConstUsuarioPasswordScan.php" method="post">
         <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" ><br><br>
+        <input type="text" name="nombre" placeholder="Escribe tu nombre"><br><br>
         <label for="password">Password:</label>
-        <input type="password" name="password" ><br><br>
+        <input type="password" name="password" placeholder="Escribe tu password"><br><br>
         <input type="submit" value="Enviar">
     </form>
 <?php
@@ -48,9 +48,11 @@ define("PASSWORD_REQUERIDO", "1234");
             if($_POST['nombre'] === NOMBRE_REQUERIDO && $_POST['password'] === PASSWORD_REQUERIDO) {
                 echo '<p>Acceso permitido</p>';
             }else{
-                echo '<Acceso>Acceso denegado</p>';
+                echo '<p>Acceso denegado</p>';
             }
         }
+    }else{
+        echo '<p>Saliendo del programa...</p>';
     }
 
     //Tipos de metodo de envio un form GET o POST

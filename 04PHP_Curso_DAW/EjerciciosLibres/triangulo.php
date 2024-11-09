@@ -26,17 +26,18 @@
     <p>Escribe un numero para dibujar un triangulo </p>
     <form action="triangulo.php" method="post">
         <label for="numero">Numero: </label>
-        <input type="number" name="numero" min="1" max="10" required>
+        <input type="number" name="numero" min="1" max="10" required placeholder="Numero">
         <input type="submit" value="Enviar">
     </form>
     <?php
         if(!empty($_POST["numero"])) {
             $numero = $_POST["numero"];// Introducimos el numero
             $contador = 0;
+            echo"<br>";
             while($contador < $numero){
                 $i = 0;
-                while($i < $contador){
-                    echo "*";
+                while($i <= $contador){
+                    echo " * ";
                     $i++;
                 }
                 echo "<br>";
