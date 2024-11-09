@@ -1,0 +1,45 @@
+<!-- Ejercicio 6 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans MT';
+            background-color: #ac9776;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicios</h2>
+    <p>...</p>
+        <script>
+            let pregunta = prompt("Como se dice en ingles Ordenador?").toLocaleLowerCase();
+            let PALABRA_CLAVE = "computer";
+            do{
+                if(pregunta === PALABRA_CLAVE){
+                    alert("Correcto, Felicidades!");
+                    break;
+                }else{
+                    pregunta = prompt("Incorrecto, preciona \"si\" para continuar o cualquier otra tecla para salir").toLocaleLowerCase();
+                    if(pregunta === "si"){
+                        pregunta = prompt("Como se dice en ingles Ordenador?").toLocaleLowerCase();
+                        if(pregunta === PALABRA_CLAVE){
+                            alert("Correcto, Felicidades!");
+                            break;
+                        }
+                    }else{
+                        alert("Gracias por jugar");
+                        break;
+                    }
+                }
+            }while(pregunta !== PALABRA_CLAVE);
+        </script>
+
+    <p>FIN</p>
+</body>
+</html>
