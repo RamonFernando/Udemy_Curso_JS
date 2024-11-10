@@ -14,7 +14,7 @@
             text-align: center;
             font-family: 'Gill Sans MT'; 
             background-color: #7b7b7a; 
-            padding: 20px";
+            padding: 20px;
         }
     </style>
 </head>
