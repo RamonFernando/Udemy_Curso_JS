@@ -12,9 +12,10 @@
     <style>
         body{
             text-align: center;
-            font-family: 'Gill Sans MT'; 
-            background-color: #7b7b7a; 
+            font-family: 'Gill Sans MT';
+            background-color: #7b7b7a;
             padding: 20px;
+            color: #ffffff;
         }
     </style>
 </head>
