@@ -35,8 +35,8 @@ session_start();
         <p>Introduce las 5 notas:</p>
         <?php
         $i = 0;
-        while ($i < 2) {
-            echo "<p><input type='number' step='0.01' name='notas[]' placeholder='Nota " . ($i+1) ."' min='0' max='10' 'required'></p>";
+        while ($i < 5) {
+            echo "<p><input type='number' step='0.01' name='notas[]' placeholder='Nota " . ($i+1) ."'  'required'></p>";
             $i++;
         }
         ?>
@@ -48,28 +48,29 @@ session_start();
         } else {
             if(isset($_POST['notas']) && !empty($_POST['notas'])){
                 $nota = $_POST['notas'];
-                $j = 0;
                 $media = 0;
-                if(($nota[$j] >= 0 && $nota[$j] <= 10)){
                     
                     echo "<h3>Notas ingresadas:</h3>";
                     $k = 0;
                     while ($k < count($nota)) {
-                        echo "<p>Nota " . ($k + 1) . ": " . number_format((float)$nota[$k], 2) . "</p>";
-                        $media += $nota[$k];
+                        if(($nota[$k] >= 0 && $nota[$k] <= 10)){
+                            echo "<p>Nota " . ($k + 1) . ": " . number_format((float)$nota[$k], 2) . "</p>";
+                            $media += $nota[$k];
+                        }else{
+                            echo "<p> La nota introducida no es válida: $nota[$k]</p>";
+                            exit();
+                        }
                         $k++;
                     }
                 $media = $media / count($nota);
                 echo "<h3>La media de las notas es: " . number_format($media, 2) . "</h3>";
                 
                 // $_SESSION = array(); // Destruir todas las variables de sesión
-                }else{
-                    echo "<h3>Hay una o mas notas no validas</h3>";
-                    
-                }
+                
             }
             // session_unset(); // Reiniciar la variable de sesión
             echo "<p>Session No: " . $_SESSION['contador']++ . "</p>";
+            
         }
     ?>
     <p>FIN</p>

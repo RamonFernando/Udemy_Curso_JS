@@ -33,7 +33,7 @@ session_start();
 <body>
     <h2>Ejercicios</h2>
     <p>Adivina el numero</p>
-    <form action="Ejercicio7.php" method="post">
+    <form action="Ejercicio7Ss.php" method="post">
         <label for="numero">Numero: </label>
         <input type="number" name="numero" placeholder="Introduce un número" min="1" max="10" required><br><br>
         <input type="submit" class="boton" value="Enviar">

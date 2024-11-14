@@ -31,7 +31,7 @@
         // Generamos 5 campos de entrada para las notas usando un bucle while
         $i = 0;
         while ($i < 5) {
-            echo "<input type='number' step='0.01' name='notas[]' placeholder='Nota " . ($i + 1) . "' min='0' max='10' required><br><br>";
+            echo "<input type='number' step='0.01' name='notas[]' placeholder='Nota " . ($i + 1) . "'  required><br><br>";
             $i++;
         }
         ?>
