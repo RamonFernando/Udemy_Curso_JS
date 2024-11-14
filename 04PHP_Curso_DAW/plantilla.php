@@ -17,6 +17,14 @@
             padding: 20px;
             color: #ffffff;
         }
+        .boton{
+            color: #7b7b7a;
+            border-radius: 0.3em;
+            padding: .5em 1em;
+            border: none;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>

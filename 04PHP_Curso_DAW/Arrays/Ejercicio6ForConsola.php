@@ -27,7 +27,7 @@
         <?php
             // Generamos 10 campos de entrada para los precios
             for ($i = 0; $i < 10; $i++) {
-                echo "<input type='number' step='0.01' name='precios[]' placeholder='Precio " . ($i + 1) . "' required><br><br>";
+                echo "<input type='number' step='0.01' name='precios[]' placeholder='Precio' " . ($i + 1) . "' required><br><br>";
             }
         ?>
         <input type="submit" value="Enviar">

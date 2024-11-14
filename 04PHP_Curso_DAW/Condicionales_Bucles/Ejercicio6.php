@@ -1,8 +1,8 @@
 <?php
 /** 
- * 5.- Crea un programa que pregunte un número de precio$precio. Si el número introducido está entre 1 y 12, 
-*   mostrará un mensaje de aceptación: "precio$precio correcto". De lo contrario, se mostrará un mensaje de 
-*   error: "precio$precio no válido". 
+ *  6.- Crea una aplicación que pregunte el precio de un producto y el número de unidades compradas. 
+ *  Si el coste de la compra es mayor de 75 €, se le hará un 15% de descuento. En caso contrario, se le 
+ *  hará sólo un 5% de descuento.
  */
 ?>
 <!DOCTYPE html>
@@ -56,10 +56,8 @@
             }
             // Mostramos el resultado
             echo $mensaje;
-            
             }
         }
-   
     ?>
     <p>FIN</p>
 </body>
