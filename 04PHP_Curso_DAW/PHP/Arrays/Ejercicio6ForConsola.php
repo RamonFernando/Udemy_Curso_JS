@@ -38,7 +38,7 @@
             $precioProducto = $_POST['precios'];
             echo "<h3>Precios ingresados:</h3>";
             // Mostramos los precios ingresados
-            foreach ($precioProducto as $index => $precio) {
+            foreach ($precioProducto as $index => $precio) { // Utilizamos foreach para recorrer el array
                 echo "<p>Producto " . ($index + 1) . ": $" . number_format((float)$precio, 2) . "</p>";
             }
         }
