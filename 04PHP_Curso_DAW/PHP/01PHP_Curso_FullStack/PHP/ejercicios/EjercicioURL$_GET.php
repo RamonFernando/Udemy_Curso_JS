@@ -109,6 +109,7 @@
             }
             $contador++;
         }
+        // Mostrar Numeros introducidos por la URL($_GET)
         echo 'Segundo numero: ' . $numero2 . "<br>";
         echo "Hay " . ($contadorImares-1) . " numeros impares entre " . $numero1 . " y " . $numero2 . "<br>";
         echo "Hay " . ($contador-1) . " numeros entre " . $numero1 . " y " . $numero2;
