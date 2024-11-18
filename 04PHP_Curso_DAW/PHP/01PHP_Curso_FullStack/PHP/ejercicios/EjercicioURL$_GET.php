@@ -1,6 +1,19 @@
 <?php
+/*
+    // 2 - Mostrar los numeros pares del 1 al 100
+    echo "Mostrar los numeros pares del 1 al 100<br>";
+    $contador = 1;
+    for ($i = 1; $i <= 100; $i++) {
+        if($i%2 == 0){
+            echo "[" . $contador ."º :" . $i . "]\t";
+            $contador++;
+        }
+    }
+    echo "<br>Hay " . ($contador-1) . " numeros pares entre 1 y 100";
+*/
+/*
     // 3 - El cuadrado de un numero las 40 primeras veces.
-    /*$a = 1;
+    $a = 1;
     while ($a <= 40) {
         $b = $a*$a;
         echo "$a x ". ($a). " = " . $b . "<br>";
@@ -45,9 +58,10 @@
         echo "No se han introducido los dos numeros por la URL";
     }
 */
-    // 6 - Mostrar una tabla de HTML con las tablas de multiplicar del 1 al 10
     
     
+/*  
+    // 6 - Mostrar una tabla de HTML con las tablas de multiplicar del 1 al 10  
     // Variables
     $numero = 20;
     $numeroContador = 20;
@@ -75,6 +89,34 @@
         $contador++;
     }
     echo "</table>";
-    
+*/
+ // 7 - Mostrar todos los numeros impares que nos lleguen por la URL($_GET) entre dos numeros
+    echo"<br><br> Mostrar todos los numeros impares que nos llegan por la URL<br>";
+    if(isset($_GET['numero1']) && isset($_GET['numero2'])){
+        $numero1 = $_GET['numero1'];
+        $numero2 = $_GET['numero2'];
+        $contador = 1;
+        $contadorImares = 1;
+        if($numero1 < $numero2){
+        // Mostrar Numeros introducidos por la URL($_GET)
+        echo 'Primer numero: ' . $numero1 . "<br>";
+        for ($i = ($numero1+1) ; $i < $numero2 ; $i++ ) {
+            if($i%2 != 0){
+                echo "Par: " .$i . "<br>";
+                $contadorImares++;
+            }else{
+                echo "<strong>Impar: ".$i . "</strong><br>";
+            }
+            $contador++;
+        }
+        echo 'Segundo numero: ' . $numero2 . "<br>";
+        echo "Hay " . ($contadorImares-1) . " numeros impares entre " . $numero1 . " y " . $numero2 . "<br>";
+        echo "Hay " . ($contador-1) . " numeros entre " . $numero1 . " y " . $numero2;
+        }else{
+        echo "El primer numero tiene que ser menor que el segundo (" . $numero1 . ") < " . $numero2 . "<br>";
+        }
+    }else{
+        echo "No se han introducido los dos numeros por la URL";
+    }
 
 ?>
