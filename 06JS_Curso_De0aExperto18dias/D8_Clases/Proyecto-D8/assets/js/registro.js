@@ -8,7 +8,7 @@ function Empleado(legajo, nombre, apellido, nacimiento, cargo) {
     this.nombre = nombre;
     this.apellido = apellido;
     this.nacimiento = nacimiento;
-    this.cargo = cargo; 
+    this.cargo = cargo;
 }
 
 function agregarEmpleado(){
@@ -23,7 +23,7 @@ function agregarEmpleado(){
     // Agregar empleados
     empleados.push(empleado);
     alert("Empleado ha sido agregado");
-    // limpiarCampos();
+    
 
 }
 function mostrarEmpleados() {
@@ -32,21 +32,13 @@ function mostrarEmpleados() {
     for (let empleado of empleados) { // recorrer el array de objetos
         let items = [];
         for (let propiedad in empleado) { // recorrer el objeto recorriendo las propiedades
-           listado += propiedad.toUpperCase() + ": " + empleado[propiedad] + ", " + "\n";
-           items += propiedad.toUpperCase() + ": " + empleado[propiedad] + ", " + "\n";
+            listado += propiedad.toUpperCase() + ": " + empleado[propiedad] + ", " + "\n";
+            items += propiedad.toUpperCase() + ": " + empleado[propiedad] + ", " + "\n";
         }
         listado = listado + "\n";
-        agregarLista(items);              
+        agregarLista(items);
     }
     alert(listado);
-    
-}
-function limpiarCampos() {
-    document.getElementById("txtLegajo").value = "";
-    document.getElementById("txtNombre").value = "";
-    document.getElementById("txtApellido").value = "";
-    document.getElementById("txtNacimiento").value= "";
-    document.getElementById("txtCargo").value = "";
     
 }
 function agregarLista(lista){
@@ -57,5 +49,19 @@ function agregarLista(lista){
     li.setAttribute("id", "li");
     li.textContent = lista;
     ol.appendChild(li);
+}
+function limpiarCampos() {
+    // Limpiar campos
+
+    document.getElementById("txtLegajo").value = "";
+    document.getElementById("txtNombre").value = "";
+    document.getElementById("txtApellido").value = "";
+    document.getElementById("txtFecha").value= "";
+    document.getElementById("txtCargo").value = "";
+}
+
+function borrarEmpleados() {
+    let listado = document.getElementById("listado");
+    listado.innerHTML = "";
 }
 

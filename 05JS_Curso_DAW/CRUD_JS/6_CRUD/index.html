@@ -50,13 +50,17 @@
             
             <div class="container-box box centrar-texto">
                 <h4 class="texto centrar-texto">Automoviles</h4>
-                <p>Listado de automóviles</p>
-                <label for="inputTexto"></label>
-                <input type="text" id="inputTexto" placeholder="Marca del Auto">
-                <button type="button" class="btn btn-primary buttonEnd btn-m1" onclick="mostrarAutos()">Mostrar</button>
-                <button type="button" class="btn btn-primary buttonEnd btn-m1" onclick="agregarAuto()">Agregar</button>
-                <button type="button" class="btn btn-primary buttonEnd btn-m1" onclick="buscarAutos()">Buscar</button>
-                <button type="button" class="btn btn-primary buttonEnd btn-m1" onclick="borrarTexto()">Borrar</button>
+                <p class="texto centrar-texto">CRUD</p>
+                <label for="inputTexto"><i class="fa-solid fa-magnifying-glass" style="color: #514e4e;"></i></label>
+                <input type="text" id="inputTexto" placeholder="Buscador" onkeyup="searchAutos()"/>
+                
+                <button type="button" class="btn btn-primary buttonEnd btn-m1" onclick="createAutos()">Agregar</button>
+                <button type="button" class="btn btn-primary buttonEnd btn-m1" onclick="readAutos()">Mostrar</button>
+                <button type="button" class="btn btn-primary buttonEnd btn-m1" onclick="updateAuto()">Actualizar</button>
+                <button type="button" class="btn btn-primary buttonEnd btn-m1" onclick="deleteAuto()">Borrar</button>
+                <button type="button" class="btn btn-primary buttonEnd btn-m1" onclick="searchAutos()">Buscar
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
                 <ul id="listaAutomoviles">Lista de Coches</ul>
                 
             
