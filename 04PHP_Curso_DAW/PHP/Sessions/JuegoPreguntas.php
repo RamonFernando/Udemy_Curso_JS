@@ -10,6 +10,7 @@
  *   d) Gary Kildall
  */
 session_start();
+// session_destroy();
 // Contador de sesiones
 if(!isset($_SESSION['sesion']) && !empty($_SESSION['sesion'])) {
     $_SESSION['usuario'] = "Ramon";

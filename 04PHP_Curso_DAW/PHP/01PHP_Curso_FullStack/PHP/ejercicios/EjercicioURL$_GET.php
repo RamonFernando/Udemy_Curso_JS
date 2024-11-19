@@ -96,14 +96,14 @@
         $numero1 = $_GET['numero1'];
         $numero2 = $_GET['numero2'];
         $contador = 1;
-        $contadorImares = 1;
+        $contadorImpares = 1;
         if($numero1 < $numero2){
         // Mostrar Numeros introducidos por la URL($_GET)
         echo 'Primer numero: ' . $numero1 . "<br>";
         for ($i = ($numero1+1) ; $i < $numero2 ; $i++ ) {
             if($i%2 != 0){
                 echo "Par: " .$i . "<br>";
-                $contadorImares++;
+                $contadorImpares++;
             }else{
                 echo "<strong>Impar: ".$i . "</strong><br>";
             }
@@ -111,7 +111,7 @@
         }
         // Mostrar Numeros introducidos por la URL($_GET)
         echo 'Segundo numero: ' . $numero2 . "<br>";
-        echo "Hay " . ($contadorImares-1) . " numeros impares entre " . $numero1 . " y " . $numero2 . "<br>";
+        echo "Hay " . ($contadorImpares-1) . " numeros impares entre " . $numero1 . " y " . $numero2 . "<br>";
         echo "Hay " . ($contador-1) . " numeros entre " . $numero1 . " y " . $numero2;
         }else{
         echo "El primer numero tiene que ser menor que el segundo (" . $numero1 . ") < " . $numero2 . "<br>";
