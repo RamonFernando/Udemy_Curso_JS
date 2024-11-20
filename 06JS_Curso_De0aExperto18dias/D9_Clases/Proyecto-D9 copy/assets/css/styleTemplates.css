@@ -9,13 +9,9 @@ Bordes(Margin y Padding) Modificadores(texto y colores) */
     --fuenteMonospace: 'Inconsolata', monospace;
     --fuenteMonserrat: 'Montserrat', sans-serif;
 }
-* {
-    box-sizing: border-box;
-    border: 2px solid red;
-  }
 html {
     box-sizing: border-box; /* Evita el padding y el border alrededor de los elementos HTML y los elementos de la hoja de estilos de CSS se adaptan al tamaño del contenedor. */
-    font-size: 62.5%; /* 1 rem = 10px */
+    font-size: 62.5%; /* 1 rem = 10px */    
 }
 *, *:before, *:after {
     box-sizing: inherit; /* Hace que el padding y el border se hereden de los elementos HTML y los elementos de la hoja de estilos de CSS. */
@@ -29,7 +25,7 @@ html {
 .container-body{
     /*max-width: 120rem !important; /* ancho maximo del contenedor */
     margin: 0 auto !important;
-    height: 100% !important; /* alto de la imagen 100% de la pantalla */
+    /* height: 100dvh !important; /* alto de la imagen 100% de la pantalla */
 }
 a {
     text-decoration: none; /* Quita subrayados */

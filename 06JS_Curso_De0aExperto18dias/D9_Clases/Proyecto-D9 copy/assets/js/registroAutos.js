@@ -18,7 +18,7 @@ Automovil.prototype.venderAutomovil = function(nuevoTitular) {
 };
 Automovil.prototype.verAuto = function () {
     // console.log(`Marca: ${this.marca}, Modelo: ${this.modelo}, Año: ${this.anio}, Color: ${this.color}, Titular: ${this.titular}`);
-    return (`Marca: ${this.marca}, Modelo: ${this.modelo}, Año: ${this.anio}, Color: ${this.color}, Titular: ${this.titular}`);
+    return document.write(`Marca: ${this.marca}, Modelo: ${this.modelo}, Año: ${this.anio}, Color: ${this.color}, Titular: ${this.titular}<br>`);
 };
 Automovil.prototype.encender = function () {
     alert("El automovil esta en marcha");
