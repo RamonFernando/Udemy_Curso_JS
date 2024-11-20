@@ -22,10 +22,13 @@ html {
     width: min(90%, 120rem); /* minimo 90% max-width: 120rem*/
     margin: 0 auto;
 }
-.container-body{
+.container-body{ /* Mantiene el footer al final de la pantalla */
     /*max-width: 120rem !important; /* ancho maximo del contenedor */
     margin: 0 auto !important;
-    height: 100% !important; /* alto de la imagen 100% de la pantalla */
+    /*height: 100% !important; /* alto de la imagen 100% de la pantalla */
+    display: grid !important;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto !important;
 }
 a {
     text-decoration: none; /* Quita subrayados */

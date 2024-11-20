@@ -11,7 +11,7 @@ Bordes(Margin y Padding) Modificadores(texto y colores) */
 }
 * {
     box-sizing: border-box;
-    border: 2px solid red;
+    /*border: 2px solid red;*/
   }
 html {
     box-sizing: border-box; /* Evita el padding y el border alrededor de los elementos HTML y los elementos de la hoja de estilos de CSS se adaptan al tamaño del contenedor. */
