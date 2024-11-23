@@ -13,11 +13,13 @@
         <form id="readForm">
             <input type="text" id="elementoTexto" name="elementoTexto" placeholder="Introducir texto"><br><br>
             <button type="button" onclick="leerTexto()">Mostrar</button>
+            <button type="button" onclick="agregarElemento()">Agregar</button>
             <button type="button" onclick="actualizarElemento()">Actualizar</button>
+            <button type="button" onclick="borrarElemento()" class="delete">Borrar</button>
         </form>
     </div>
     <div class="container">
-        <ol id="resultado">Resultados lista</ol>
+        <ol id="resultado">Resultados de la lista</ol>
     </div>
-    <script src="update.js"></script>
+    <script src="LeerDatos.js"></script>
 </html>
