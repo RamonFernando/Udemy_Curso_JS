@@ -3,19 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Iniciar Sesión</title>
 </head>
 <body>
-    <h2>Iniciar Sesión</h2>
-    <form action="login.php" method="POST">
-        <label for="nombre_usuario">Nombre de usuario:</label><br>
-        <input type="text" id="nombre_usuario" name="nombre_usuario" required><br><br>
-        
-        <label for="contraseña">Contraseña:</label><br>
-        <input type="password" id="contraseña" name="contraseña" required><br><br>
-        
-        <button type="submit">Iniciar Sesión</button>
-    </form>
-    <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+    <main class="login-container">
+        <!-- Encabezado de la página -->
+        <h2 class="login-title">Iniciar Sesión</h2>
+
+        <!-- Formulario de inicio de sesión -->
+        <form class="login-form" action="login.php" method="POST">
+            <!-- Campo de nombre de usuario -->
+            <div class="form-group">
+                <label for="nombre_usuario">Nombre de usuario:</label>
+                <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+            </div>
+
+            <!-- Campo de contraseña -->
+            <div class="form-group">
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña" required>
+            </div>
+
+            <!-- Botón de inicio de sesión -->
+            <button class="login-button" type="submit">Iniciar Sesión</button>
+        </form>
+
+        <!-- Enlace para registrarse -->
+        <div class="register-link">
+            <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        </div>
+    </main>
 </body>
 </html>
