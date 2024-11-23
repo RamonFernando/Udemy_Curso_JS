@@ -52,3 +52,7 @@ p {
 .action-btn:hover {
     background: #0056b3;
 }
+#logoMe {
+    color: #f94e4e;
+    font-weight: bold;
+}
