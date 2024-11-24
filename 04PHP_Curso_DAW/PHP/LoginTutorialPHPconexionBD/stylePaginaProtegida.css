@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 950px;
     margin: 50px auto;
     padding: 20px;
     background: #fff;
@@ -179,4 +179,34 @@ tr:nth-child(even) {
 
 .modal-close:hover {
     background: #c0392b;
+}
+@media (max-width: 1110px) {
+    
+    .editar {
+        padding: 8px 22px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+        margin-bottom: 10px;
+    }
+    .delete {
+        background: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 15px;
+        cursor: pointer;
+        font-size: 15.5px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        transition: background 0.3s ease;
+        margin-left: 5px;
+    }
+    
 }
