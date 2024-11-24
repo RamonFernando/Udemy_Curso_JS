@@ -17,8 +17,8 @@ if (isset($_POST['create'])) {
     $name = trim($_POST['name']);
     $title = trim($_POST['title']);
     if (!empty($name) && !empty($title)) {
-        $sql = $conn->prepare("INSERT INTO items (name, title) VALUES (?, ?)");
-        $sql->bind_param("ss", $name, $title);
+        $sql = $conn->prepare("INSERT INTO items (name, title) VALUES (?, ?)"); // Preparar la sentencia SQL
+        // $sql->bind_param("ss", $name, $title); // Asociar variables a la sentencia
         if (!$sql->execute()) {
             die("Error al insertar: " . $conn->error);
         }

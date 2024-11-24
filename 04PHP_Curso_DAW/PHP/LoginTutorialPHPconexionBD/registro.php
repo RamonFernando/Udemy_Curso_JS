@@ -34,6 +34,9 @@ $stmt->store_result(); // Devuelve true en caso de exito o false en caso de erro
 
 if ($stmt->num_rows > 0) { // num_rows — Devuelve el número de filas de un conjunto de resultados de una sentencia mysqli_stmt::$num_rows
     echo "El nombre de usuario o correo electrónico ya están en uso.";
+    // Mostramos un enlace a la pagina anterior
+    echo "<br><a href='javascript:history.back()'>Volver</a>";
+    // header("Location: registro.html");
     exit();
 }
 
