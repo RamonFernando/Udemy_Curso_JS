@@ -18,7 +18,7 @@ if (isset($_POST['create'])) {
     $title = trim($_POST['title']);
     if (!empty($name) && !empty($title)) {
         $sql = $conn->prepare("INSERT INTO items (name, title) VALUES (?, ?)"); // Preparar la sentencia SQL
-        // $sql->bind_param("ss", $name, $title); // Asociar variables a la sentencia
+        $sql->bind_param("ss", $name, $title); // Asociar variables a la sentencia
         if (!$sql->execute()) {
             die("Error al insertar: " . $conn->error);
         }
@@ -32,7 +32,7 @@ if (isset($_POST['update'])) {
     $name = trim($_POST['name']);
     $title = trim($_POST['title']);
     if (!empty($id) && !empty($name) && !empty($title)) {
-        $sql = $conn->prepare("UPDATE items SET name = ?, title = ? WHERE id = ?");
+        $sql = $conn->prepare("UPDATE items SET name = ?, title = ? WHERE id = ?"); // Preparar la sentencia SQL
         $sql->bind_param("ssi", $name, $title, $id);
         if (!$sql->execute()) {
             die("Error al actualizar: " . $conn->error);
@@ -56,7 +56,7 @@ if (isset($_GET['delete'])) {
 
 // Leer los elementos
 $sql = "SELECT * FROM items";
-$result = $conn->query($sql);
+$result = $conn->query($sql); // Ejecutar la consulta y obtener los resultados
 
 // Verificar si la consulta devolvió resultados
 if (!$result) {
@@ -65,7 +65,7 @@ if (!$result) {
 
 // Función para validar si un texto es una URL válida
 function esUrlValida($texto) {
-    return filter_var($texto, FILTER_VALIDATE_URL);
+    return filter_var($texto, FILTER_VALIDATE_URL); // filter_var() se utiliza para verificar si un texto es una URL válida
 }
 ?>
 
