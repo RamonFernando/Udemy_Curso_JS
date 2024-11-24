@@ -72,7 +72,7 @@ button:hover {
 }
 
 .logout-btn {
-    background-color: #007bff;
+    background-color: #e74c3c;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -83,7 +83,7 @@ button:hover {
 }
 
 .logout-btn:hover {
-    background-color: #0056b3;
+    background-color: #b83d30;
 }
 
 .buttons-container {

@@ -125,7 +125,7 @@ function esUrlValida($texto) {
     <!-- Botones adicionales -->
     <div class="container buttons-container">
         <a href="https://portafoliofreelancer2024noviembre.netlify.app/" class="button-link">
-            <button type="button" class="logout-btn">Portafolio</button>
+            <button type="button">Portafolio</button>
         </a>
         <a href="https://github.com/RamonFernando?tab=repositories/" class="button-link" target="_blank" rel="noopener noreferrer">
                 <button class="action-btn">Git</button>
