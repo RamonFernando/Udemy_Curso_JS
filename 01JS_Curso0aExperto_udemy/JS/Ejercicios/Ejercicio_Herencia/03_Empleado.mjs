@@ -1,3 +1,5 @@
+import { Persona } from "./01_Persona.mjs";
+
 class Empleado extends Persona {
 
     static contadorEmpleados = 0
@@ -26,3 +28,8 @@ class Empleado extends Persona {
     }
 
 }
+
+let empleado1 = new Empleado('Karla', 'Gomez', 25, 5000);
+console.log(empleado1.toString());
+
+export {Empleado};

@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="/04PHP_Curso_DAW/login_MVC/assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
     <meta charset="UTF-8" viewport="width=device-width, initial-scale=1.0">
 </head>
 <body>

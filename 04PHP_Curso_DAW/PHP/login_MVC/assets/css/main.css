@@ -2,10 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-@import 'reset.css';
-@import 'typography.css';
-@import 'forms.css';
-@import 'buttons.css';
+@import url('reset.css');
+@import url('typography.css');
+@import url('forms.css');
+@import url('buttons.css');
 
 body {
     background-color: #adc9d5;

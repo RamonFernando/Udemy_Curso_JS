@@ -63,6 +63,18 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+/* Mensajes de error */
+/* Estilo de advertencia para el mensaje de error */
+.error {
+    color: #856404;                /* Color del texto */
+    background-color: #fff3cd;     /* Color de fondo */
+    border: 1px solid #a7945c;     /* Borde */
+    padding: 15px;                 /* Espacio interno */
+    margin-bottom: 20px;           /* Espacio inferior */
+    border-radius: 5px;            /* Esquinas redondeadas */
+}
+
+
 /* Enlace de registro */
 p {
     text-align: center;

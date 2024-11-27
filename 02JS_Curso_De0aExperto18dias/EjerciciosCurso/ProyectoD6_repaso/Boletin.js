@@ -34,15 +34,15 @@ function notaMasAlta() {
 function haySuspenso() {
     let contNotasSuspensas = 0;
     let nota = document.getElementById("aplazo");
-    for (const notaSuspensa of calificaciones) {
+    /*for (const notaSuspensa of calificaciones) {
         if(notaSuspensa < 5){
             contNotasSuspensas++;
             nota.textContent = "Tu nota suspensa mas baja es " + notaSuspensa + " y tienes " + contNotasSuspensas + " nota/s suspensa/s.";
         }else{
             nota.textContent = "No tienes notas suspensas";
         }
-    }
-    
-    
-    
+        }*/
+        // usar filter 
+        let notasSuspensas = calificaciones.filter(nota => nota < 5);
+        nota.textContent = "Tienes " + notasSuspensas.length + " notas suspensas" + " y tus notas suspensas son " + notasSuspensas.join(", "); // join convierte un array en un string
 }

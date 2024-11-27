@@ -1,3 +1,5 @@
+import { Empleado } from "./03_Empleado.mjs";
+import { Cliente } from "./04_Cliente.js";
 class Persona {
 
     static contadorPersonas = 0;
@@ -34,3 +36,13 @@ class Persona {
         return `${this._idPersona} ${this._nombre} ${this._apellido} ${this.edad}`;
     }
 }
+
+let persona1 = new Persona('Juan', 'Perez', 28);
+console.log(persona1.toString());
+
+
+
+let cliente1 = new Cliente('Miguel', 'Cervantes', 30, new Date());
+console.log(cliente1.toString());
+
+export {Persona};

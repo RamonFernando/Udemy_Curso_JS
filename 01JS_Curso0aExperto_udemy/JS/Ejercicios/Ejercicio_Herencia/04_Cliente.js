@@ -25,3 +25,5 @@ class Cliente extends Persona {
         return `${super.toString} ${this._idCliente} ${this._fechaRegistro}`;
     }
 }
+
+export { Cliente };

@@ -22,5 +22,23 @@ function agregarElemento() {
     }else{
         alert("Por favor, escribe un elemento.");
     }
-
 }
+
+// Eliminar por posicion del array empezando desde el 1 y no el 0
+/*function borrarElemento() {
+    let borrarElemento = document.getElementById("elementoTexto").value;
+    elemento = Number(borrarElemento);
+    for (let i = elemento; i <= elementos.length; i++) {
+            elementos.splice((i-1), 1);
+            break;
+    }
+    leerTexto();
+}*/
+
+function borrarElemento() {
+    let borrarElemento = document.getElementById("elementoTexto").value;
+    elemento = Number(borrarElemento);
+    elementos.splice((elemento-1), 1);
+    leerTexto();
+}
+
