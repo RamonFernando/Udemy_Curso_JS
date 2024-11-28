@@ -71,6 +71,9 @@ body{
     justify-content: center;
     align-items: center;  
 }
+.btn{
+    font-size: 1.7rem !important;
+}
 .btn-social{
     border: #4461e0 1px solid;
     padding: 0 4px;
@@ -99,7 +102,7 @@ body{
     width: 12rem;
 }
 .box{
-    max-width: 25rem;
+    /*max-width: 25rem;*/
     align-items: center;
     padding-bottom: 1rem;
     margin: 0 auto;

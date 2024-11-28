@@ -23,7 +23,8 @@
         <!-- My templates -->
         <link rel="stylesheet" href="assets/css/normalizer.css">
         <link rel="stylesheet" href="assets/css/styleTemplates.css">
-        
+        <!-- My scripts -->
+        <script src="assets/js/animales.js"></script>
     </head>
 <body class="container-body">
     <header class="header">
@@ -48,8 +49,13 @@
     <div class="container padding-2m">
         <main class="container-main" id="ejercicios">
             <h4 class="texto centrar-texto">Texto Encabezado</h4>
-            <div class="container-box">
-                <p>Escribe tu texto aqui</p>
+            <div class="container-box box centrar-texto">
+                <h1>Veterinaria Animalito's</h1>
+                <div class="textoCentrado">
+                    <button class="btn btn-primary buttonEnd btn-m1" onclick="mostrarAnimales()">Mostrar Animales</button>
+                </div>
+                <br>
+                <ul id="listaAnimales"></ul>
             
             
             </div><!--.container-box-->
