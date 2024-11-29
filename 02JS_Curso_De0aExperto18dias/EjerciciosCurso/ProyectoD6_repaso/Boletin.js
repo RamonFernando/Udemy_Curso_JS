@@ -1,4 +1,4 @@
-let calificaciones = [7, 4, 5.7, 9, 8.5, 3];
+let calificaciones = [7, 4, 9.97, 9, 8.5, 3.8];
 
 function listarNotas() {
     let listaNotas = document.getElementById("listaNotas");
@@ -19,7 +19,7 @@ function calcularPromedio() {
     promedio = promedio.toFixed(2); // Redondea a 2 decimales
     document.getElementById("promedio").textContent = promedio; // Muestra el promedio en el id promedio
 }
-
+/*
 function notaMasAlta() {
     let notaMax = 0;
     for (let nota of calificaciones) {
@@ -29,6 +29,12 @@ function notaMasAlta() {
     }
     nota = notaMax.toFixed(1);
     document.getElementById("nota").textContent = notaMax;
+}
+*/
+
+function notaMasAlta(){
+    let notaMax = Math.max(...calificaciones);
+    document.getElementById("nota").textContent = notaMax.toFixed(2);
 }
 
 function haySuspenso() {
@@ -43,6 +49,10 @@ function haySuspenso() {
         }
         }*/
         // usar filter 
-        let notasSuspensas = calificaciones.filter(nota => nota < 5);
-        nota.textContent = "Tienes " + notasSuspensas.length + " notas suspensas" + " y tus notas suspensas son " + notasSuspensas.join(", "); // join convierte un array en un string
+        let notasSuspensas = calificaciones.filter(nota => nota < 5); // devuelve un array nuevo con las notas < 5
+        if (notasSuspensas.length > 1)
+            nota.textContent = "Tienes " + notasSuspensas.length + " notas suspensas" + " y tus notas suspensas son " + notasSuspensas.join(" - "); // join convierte un array en un string
+        else
+            nota.textContent = "Tienes " + notasSuspensas.length + " nota suspensa" + " y tu nota suspensa es " + notasSuspensas;
+        
 }
