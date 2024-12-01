@@ -32,7 +32,23 @@ valores mediante un bucle for. -->
 <body>
     <h2>Ejercicios</h2>
     <p>...</p>
-    
+    <script>
+        let matriculas = new Array(100);
+        for(i = 0; i < matriculas.length; i++){
+            matriculas[i] = "sinmatricula";
+        }
+        for(i = 0; i < matriculas.length; i++){
+            document.write((i+1) + ": " + matriculas[i] + "<br>");
+        }
+    </script>
+    <hr>
+    <script>
+        matriculas = new Array(100);
+        matriculas.fill("sinmatricula");
+        matriculas.forEach((matriculas, i) => {
+            document.write((i+1) + ": " + matriculas + "<br>");
+        });
+    </script>
     <p>FIN</p>
 </body>
 </html>

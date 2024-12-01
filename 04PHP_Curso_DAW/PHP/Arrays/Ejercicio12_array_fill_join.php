@@ -41,7 +41,7 @@
     }
     echo "<br><br>";
 
-    // Creamos el array con array_fill y Mostrar el array con join
+    // Creamos el array con array_fill y Mostrar el array con join para separarlo por comas
     $matriculas = array_fill(0, 10, "sinMatricula");
     echo join(", ", $matriculas) . PHP_EOL;
     echo "<br><br>";
