@@ -1,6 +1,7 @@
 <?php
 /** 
- * 
+ * 13.- Crea un programa que rellene un array llamado potencias con las primeras 20 potencias de 2. 
+ * Haz que después se muestren todos los valores mediante un bucle while.
  */
 ?>
 <!DOCTYPE html>
@@ -31,7 +32,12 @@
     <h2>Ejercicios</h2>
     <p>...</p>
     <?php
-        
+        $potencias = array();
+        // mostramos el array sin que se muestre la posicion 1
+        for ($i = 0; $i < 20; $i++) {
+            $potencias[$i] = pow(2, ($i+1)); // no muestra la potencia de 1 porque es 2^0
+            echo ($i+1) . ": ". $potencias[$i] . "<br>";
+        }
     ?>
     <p>FIN</p>
 </body>
