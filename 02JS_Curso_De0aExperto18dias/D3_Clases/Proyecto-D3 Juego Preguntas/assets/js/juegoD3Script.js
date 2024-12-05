@@ -57,22 +57,29 @@ que sean iguales muestra el mensaje de Correcto y en el caso de
 que sean diferentes muestra el mensaje de Incorrecto capturado en la
 variable validarRespuesta */
 function mostrarRespuesta() {
+    // Obtengo respuesta
     let respuesta1 = document.getElementById("question-1").value;
     let respuesta2 = document.getElementById("question-2").value;
     let respuesta3 = document.getElementById("question-3").value;
     let respuesta4 = document.getElementById("question-4").value;
     let respuesta5 = document.getElementById("question-5").value;
+
+    // muestro respuesta
     let mostrarRespuesta1 = document.getElementById("answer-1");
     let mostrarRespuesta2 = document.getElementById("answer-2");
     let mostrarRespuesta3 = document.getElementById("answer-3");
     let mostrarRespuesta4 = document.getElementById("answer-4");
     let mostrarRespuesta5 = document.getElementById("answer-5");
+
+    // Respuesta correcta
     let mensaje1 = "Paris";
     let mensaje2 = "H2O";
     let mensaje3 = "1492";
     let mensaje4 = "299792458";
     let mensaje5 = "O2";
     let respuesta = "Respuesta: ";
+
+    // Validar respuesta
     const validarRespuesta1 = "Correcto";
     const validarRespuesta2 = "Incorrecto";
     /*validarRespuesta1.style.color = "green";
