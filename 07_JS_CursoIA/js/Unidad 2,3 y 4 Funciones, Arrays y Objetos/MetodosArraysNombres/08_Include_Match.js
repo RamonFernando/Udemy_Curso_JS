@@ -1,5 +1,10 @@
 // Escribe una función que reciba una cadena de texto y cuente cuántas vocales tiene.
 
+// La propiedad o método match() es una función de los strings que permite encontrar 
+// coincidencias en una cadena de texto basándose en una expresión regular.
+// Match: Devuelve un array con las coincidencias encontradas o null si no hay ninguna coincidencia.
+
+// EJEMPLO MATCH
 let texto = "Hola, ¿cómo estás?";
 
 // Utilizamos la propiedad match() para encontrar todas las vocales en el texto

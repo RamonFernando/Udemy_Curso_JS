@@ -14,7 +14,7 @@ let calculadora = {
 console.log(calculadora.sumar(5, 3)); // 8
 console.log(calculadora.restar(10, 6)); // 4
 console.log(calculadora.multiplicar(4, 6)); // 24
-console.log(calculadora.dividir(20, 0)); // 4
+console.log(calculadora.dividir(20, 0)); // infinity
 console.log(calculadora.dividir(20, 5)); // 4
 
 /*

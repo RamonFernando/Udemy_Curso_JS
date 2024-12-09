@@ -8,31 +8,32 @@
         <script src="boletin.js"></script>
         <script src="Boletin.js"></script>
 </head>
-<body>
-    <body onload="listarNotas()">
+<body onload="listarNotas()">
+    <div class="contenedor">
         <div class="logo">
             <img src="logo.jpg" alt ="logo"/>
             <h2>Bienvenido a tu boletín estudiantil</h2>
         </div>
-
         <div class="estudiante">
             <h3>Alumno: Ramón Fernando</h3>
         </div>
-
+    
         <h4>Notas:</h4>
         <ol id="listaNotas">
         </ol>
-
+    
         <div class="info">
             <h4>Promedio: <span id="promedio"></span></h4>
             <button onclick="calcularPromedio()" >Calcular promedio</button>
-
+    
             <h4>Nota más alta: <span id="nota"></span></h4>
             <button onclick="notaMasAlta()">Buscar nota más alta</button>
-
+    
             <h4>¿Hubo algún aplazo? <span id="aplazo"></span></h4>
             <button onclick="haySuspenso()">Consultar aplazo</button>
         </div>
-    </body>
+    </div>
 </body>
+    
+
 </html>

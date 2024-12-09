@@ -1,4 +1,4 @@
-let calificaciones = [7, 4, 9.97, 9, 8.5, 3.8];
+let calificaciones = [7, 4, 9.97, 9, 8.5, 3.8, 9];
 
 function listarNotas() {
     let listaNotas = document.getElementById("listaNotas");
@@ -38,9 +38,22 @@ function notaMasAlta(){
 }
 
 function haySuspenso() {
-    let contNotasSuspensas = 0;
+    // usar filter
     let nota = document.getElementById("aplazo");
-    /*for (const notaSuspensa of calificaciones) {
+    let notasSuspensas = calificaciones.filter(nota => nota < 5); // devuelve un array nuevo con las notas < 5
+    if(notasSuspensas.length == 0){
+        nota.textContent = "No tienes notas suspensas";
+    }else{
+        if (notasSuspensas.length > 1)
+            nota.textContent = "Tienes " + notasSuspensas.length + " notas suspensas" + " y tus notas suspensas son " + notasSuspensas.join(" - "); // join convierte un array en un string
+        else
+            nota.textContent = "Tienes " + notasSuspensas.length + " nota suspensa" + " y tu nota suspensa es " + notasSuspensas;
+    }
+    
+    // Metodo tradicional
+    /* let contNotasSuspensas = 0;
+    let nota = document.getElementById("aplazo");
+    for (const notaSuspensa of calificaciones) {
         if(notaSuspensa < 5){
             contNotasSuspensas++;
             nota.textContent = "Tu nota suspensa mas baja es " + notaSuspensa + " y tienes " + contNotasSuspensas + " nota/s suspensa/s.";
@@ -48,11 +61,4 @@ function haySuspenso() {
             nota.textContent = "No tienes notas suspensas";
         }
         }*/
-        // usar filter 
-        let notasSuspensas = calificaciones.filter(nota => nota < 5); // devuelve un array nuevo con las notas < 5
-        if (notasSuspensas.length > 1)
-            nota.textContent = "Tienes " + notasSuspensas.length + " notas suspensas" + " y tus notas suspensas son " + notasSuspensas.join(" - "); // join convierte un array en un string
-        else
-            nota.textContent = "Tienes " + notasSuspensas.length + " nota suspensa" + " y tu nota suspensa es " + notasSuspensas;
-        
 }

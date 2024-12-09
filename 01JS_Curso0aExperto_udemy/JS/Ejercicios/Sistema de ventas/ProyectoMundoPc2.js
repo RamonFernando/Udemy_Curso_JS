@@ -219,6 +219,7 @@ let compRazer = new Computadora("Razer", monitorHP, tecladoRazer, ratonRazer);
 console.log(compAlienware.toString());
 console.log(compCorsair.toString());
 console.log(compMSI.toString());
+console.log(compRazer.toString());
 
 // Utilizamos los setters y getters
 console.log("ID: Ordenador - " + compAlienware._idComputadora);
@@ -258,10 +259,18 @@ class Orden {
         });
         return `Orden: ${this._idOrden}, Ordenador: ${mostrarDatos}`;
     }
+    mostrarOrden2(){
+        let mostrarDatos = this._computadoras.reduce((computadoras, index) => computadoras + index, 0);
+        return `Orden: ${this._idOrden}, Ordenador: ${mostrarDatos}`;
+    }
+    mostrarOrden3(){
+        let mostrarDatos = this._computadoras.map((computadoras, index) => computadoras + index, 0);
+        return `Orden: ${this._idOrden}, Ordenador: ${mostrarDatos}`;
+    }
 
-    /*toString(){
+    toString(){
         return `Orden: ${this._idOrden}, Ordenador: ${this._computadoras}`;
-    }*/
+    }
 }
 
 // ORDENES COMPROBACIONES
@@ -278,3 +287,10 @@ Orden2.agregarComputadora(compAlienware);
 Orden2.agregarComputadora(compRazer);
 // console.log(Orden2.toString());
 console.log(Orden2.mostrarOrden());
+
+console.log("// ** -------------------------------- Orden 2 con Reduce ------------------------------------ ** //");
+console.log(Orden2.mostrarOrden2());
+
+console.log("// ** -------------------------------- Orden 2 con Map ------------------------------------ ** //");
+console.log(Orden2.mostrarOrden3());
+

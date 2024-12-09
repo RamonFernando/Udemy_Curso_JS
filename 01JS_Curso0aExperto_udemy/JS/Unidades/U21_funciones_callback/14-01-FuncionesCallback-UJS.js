@@ -19,4 +19,5 @@ function sumar(op1, op2, funcionCallback){
     funcionCallback(`Resultado: ${res}`);
 }
 
+// Pasas la fuincion por parametro
 sumar(5,3, imp);

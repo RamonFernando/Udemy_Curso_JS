@@ -11,7 +11,26 @@ console.log(estudiante.cursos[0].nombre); // "Matemáticas"
 
 // Modificar propiedades anidadas
 estudiante.cursos[1].calificacion = 92;
-console.log(estudiante.cursos[1].calificacion); // 92
+console.log(estudiante.cursos[1].calificacion);// 92
+// hacer esto con for of y for in 
+// For of
+for (const curso of estudiante.cursos) {
+    if (curso.nombre === "Matemáticas") {
+        curso.calificacion = 92;
+    }
+}
+// For in
+for (const i in estudiante.cursos) {
+    if (estudiante.cursos[i].nombre === "Matemáticas") {
+        estudiante.cursos[i].calificacion = 92; // Modifica el valor accediendo por índice
+    }
+}
+// Metodo tradicional con for
+for (let i = 0; i < estudiante.cursos.length; i++) {
+    if (estudiante.cursos[i].nombre === "Matemáticas") {
+        estudiante.cursos[i].calificacion = 92; // Modifica el valor accediendo por índice
+    }
+}
 
 // Agregar propiedades anidadas
 estudiante.cursos.push({ nombre: "Inglés", calificacion: 88 });
