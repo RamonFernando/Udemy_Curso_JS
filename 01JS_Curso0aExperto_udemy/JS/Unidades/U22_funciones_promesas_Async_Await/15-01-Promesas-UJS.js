@@ -3,8 +3,10 @@ let miPromesa = new Promise((resolver, rechazar) => {
     if(expresion)
         resolver('Resolvió correcto');
     else
-        rechazar('Se produjo un error');    
+        rechazar('Se produjo un error');
 });
 
 //miPromesa.then( valor => console.log(valor), error => console.log(error));
-miPromesa.then(valor => console.log(valor)).catch(error=>console.log(error));
+miPromesa
+    .then(valor => console.log(valor))
+    .catch(error=>console.log(error));
