@@ -101,6 +101,3 @@ function ocultarAlertError() {
     alert.style.display = 'none';
 }
 
-document.querySelector('.alert').addEventListener('click', function(){
-    this.style.display = 'none';
-});

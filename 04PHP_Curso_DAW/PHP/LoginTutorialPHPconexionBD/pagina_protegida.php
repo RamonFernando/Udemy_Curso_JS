@@ -145,6 +145,9 @@ function esUrlValida($texto) {
             <a href="https://idx.google.com/udemycursojsgit-1938822/" class="button-link" target="_blank" rel="noopener noreferrer">
                 <button class="action-btn">Idx</button>
             </a>
+            <a href="https://aitor-medrano.github.io/dwes2122/index.html" class="button-link" target="_blank" rel="noopener noreferrer">
+                <button class="action-btn">DAWES</button>
+            </a>
             <form action="logout.php" method="POST" class="logout-form">
                 <button type="submit" class="logout-btn">Cerrar Sesión</button>
             </form>
