@@ -21,10 +21,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine("Resta: " + resta);
             Console.WriteLine("multiplicacion: " + multiplicacion);
             Console.WriteLine((num2 == 0) ? "No se puede dividir por cero" : "Division: " + division);
-            
             Console.WriteLine("Potencia: " + potencia);
 
-            Console.ReadLine();
+            Console.ReadLine(); // Mostramos la consola
 
             
         }
