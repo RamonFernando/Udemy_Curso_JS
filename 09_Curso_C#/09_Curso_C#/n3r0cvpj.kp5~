@@ -10,7 +10,7 @@ namespace _09_Curso_C_
     {
         static void Main(string[] args) {
             // Variables y Operadores
-            Console.WriteLine("Variables y Operadores en C#");
+            Console.WriteLine("Variables y Operadores");
             int a = 10;
             int b = 5;
             int c = a + b;
@@ -124,9 +124,6 @@ namespace _09_Curso_C_
             // Arrays
             Console.WriteLine("Arrays");
             int[] numeros = { 1, 2, 3, 4, 5, 11, 31, 14, 9 };
-            int[] numeros1 = { 1, 2, 3, 4, 5, 11, 31, 14, 9, 12 };
-            string[] nombres = { "Juan", "Pedro", "Maria" };
-            
             Console.WriteLine("El tamaño del array es: " + numeros.Length);
             Console.WriteLine("El valor en la posicion 2 es: " + numeros[2]);
             numeros[2] = 10;
@@ -134,53 +131,9 @@ namespace _09_Curso_C_
 
             // Metodos de Arrays
             Console.WriteLine("Metodos de Arrays");
-            // Invertir el orden de los elementos del array
-            Array.Reverse(numeros); // [9, 14, 31, 11, 5, 4, 3, 2, 1]
-            
-            // Ordenar el array
-            Array.Sort(numeros); // [1, 2, 3, 4, 5, 9, 11, 14, 31]
-            
-            // Eliminar elementos del array (nombre del array, posicion, cantidad de elementos)
-            Array.Clear(numeros1, 0, numeros.Length); // mostraria [0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-            // Copiar arrays y clonarlos en un nuevo array
-            int[] numeros2 = new int[numeros.Length];
-            Array.Copy(numeros, numeros2, numeros.Length);
-
-            // Metodo filter
-            int[] numeros3 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int[] numeros4 = numeros3.Where(x => x % 2 == 0).ToArray();
-
-            // Metodo join
-            int[] numeros13 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            string numeros14 = string.Join(",", numeros13);
-
-            // Metodo select
-            int[] numeros15 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int[] numeros16 = numeros15.Select(x => x * 2).ToArray();
-
-            // Metodo skip
-            int[] numeros17 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int[] numeros18 = numeros17.Skip(3).ToArray();
-
-            // Metodo take
-            int[] numeros19 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int[] numeros20 = numeros19.Take(3).ToArray();
-
-            // Metodo reduce
-            int[] numeros23 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int numeros24 = numeros23.Aggregate((x, y) => x + y);
-
-            // Recorrer arrays
-            foreach (var numero in numeros) {
-                Console.Write(numero + " ");
-            }
-            Console.WriteLine();
-            foreach (var nombre in nombres) {
-                Console.Write(nombre + " ");
-            }
-
-            Console.WriteLine("\nEl valor en la posicion 2 es: " + numeros[2]);
+            Array.Sort(numeros);
+            Console.WriteLine(numeros);
+            Console.WriteLine("El valor en la posicion 2 es: " + numeros[2]);
             Array.Reverse(numeros);
             Console.WriteLine("El valor en la posicion 2 es: " + numeros[2]);
             Array.Clear(numeros, 0, numeros.Length);
@@ -190,24 +143,8 @@ namespace _09_Curso_C_
             // Matrices o Arrays Bidimensionales
             Console.WriteLine("Matrices o Arrays Bidimensionales");
             int[,] matriz = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            string[,] matriz2 = { { "a", "b", "c" }, { "d", "e", "f" }, { "g", "h", "i" } };
             Console.WriteLine("El valor en la posicion 1, 2 es: " + matriz[1, 2]);
             Console.WriteLine("El valor en la posicion 2, 2 es: " + matriz[2, 2]);
-
-            Console.WriteLine("\nMetodos para recorrer arrays bidimensionales");
-            // Metodo para recorrer arrays bidimensionales
-            for (int i = 0; i < matriz.GetLength(0); i++) {
-                for (int j = 0; j < matriz.GetLength(1); j++) {
-                    Console.Write(matriz[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
-
-            // Metodo para recorrer arrays bidimensionales con foreach
-            foreach (var item in matriz2) {
-                Console.Write(item + " ");
-            }
-            Console.WriteLine();
 
             // Listas
             Console.WriteLine("Listas");
@@ -217,7 +154,13 @@ namespace _09_Curso_C_
             lista.Add(3);
             Console.WriteLine("El tamaño de la lista es: " + lista.Count);
 
+            
+            
+
             Console.ReadKey();
-            }
+
+            
+
+        }
     }
 }
