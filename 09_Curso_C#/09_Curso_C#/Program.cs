@@ -217,6 +217,12 @@ namespace _09_Curso_C_
             lista.Add(3);
             Console.WriteLine("El tamaño de la lista es: " + lista.Count);
 
+            // Metodos de String o Cadenas de Texto
+            string cadena = "Monitor 20\" Pulgadas";
+            Console.WriteLine("La longitud de la cadena es: " + cadena.Length);
+            Console.WriteLine("La cadena en mayusculas es: " + cadena.ToUpper());
+            Console.WriteLine("La cadena en minusculas es: " + cadena.ToLower());
+
             Console.ReadKey();
             }
     }
