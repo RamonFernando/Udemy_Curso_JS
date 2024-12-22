@@ -53,10 +53,10 @@
             return false; // Numeros menores o iguales a 1 no son primos
         }
         // Comprobar si el numero es primo dividiendo por 2
-        for($i = 2; $i < sqrt($numero); $i++){
+        for($i = 2; $i < sqrt($numero); $i++){ // Comprobar si el numero es primo dividiendo por 2 hasta la raiz del numero
             
             if($numero % $i == 0) // Si el resto de la division es 0 el numero no es primo
-                return false; 
+                return false;
         }
     return true;
     }

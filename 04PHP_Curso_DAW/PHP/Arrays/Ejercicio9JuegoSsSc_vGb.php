@@ -54,7 +54,7 @@ if(!isset($_SESSION['sesion']) && !empty($_SESSION['sesion'])) {
     <p>c) Ed Roberts</p>
     <p>d) Gary Kildall</p>
     <p>----------------------------------------------------------</p>
-    <form action="Ejercicio9.php" method="post">
+    <form action="Ejercicio9JuegoSsSc_vGb.php" method="post">
     <label for="pregunta"><p>Preguntas?</p></label>
     <input type="text" name="pregunta[]" placeholder="Pregunta" required><br>
     <?php
@@ -94,7 +94,7 @@ if(!isset($_SESSION['sesion']) && !empty($_SESSION['sesion'])) {
         }
     ?>
     <p>----------------------------------------------------------</p>
-    <form action="Ejercicio9.php" method="post"><br><br>
+    <form action="Ejercicio9JuegoSsSc_vGb.php" method="post"><br><br>
     <label for="respuestaAlumno">Respuesta del Alumno:</label><br>
     <input type="text" name="respuestaAlumno" placeholder="Respuesta" required><br><br>
     <input type="submit" class="boton" value="Enviar">
@@ -122,6 +122,7 @@ if(!isset($_SESSION['sesion']) && !empty($_SESSION['sesion'])) {
                 echo '<p style="color:red;">Respuesta incorrecta</p>';
             }
             // session_unset();
+            // session_destroy();
         }
         echo "<p>----------------------------------------------------------</p>";
         echo "<p>Sesión: " . $_SESSION['session'] . "</p>";

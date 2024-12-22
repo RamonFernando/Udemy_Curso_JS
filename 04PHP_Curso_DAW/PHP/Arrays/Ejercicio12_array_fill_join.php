@@ -34,16 +34,24 @@
     <p>Matrícluas</p>
     <?php
     
-    // $matriculas = array(); // Array vacio 
+    // $matriculas = array(); // Array vacio
     $matriculas = array_fill(0, 10, "sinMatricula"); // Array con 10 posiciones con el valor "sinMatricula"
-    foreach ($matriculas as $matricula) {
-        echo $matricula . PHP_EOL;
+    
+
+    // Creamos el array con array_fill y Mostrar el array con join para separarlo por comas
+    echo join(" - ", $matriculas) . PHP_EOL;
+    echo "<br><br>";
+    
+    // ForEach con indice
+    foreach ($matriculas as $i => $matricula) {
+        echo $i . ": " . $matricula . "<br>";
     }
     echo "<br><br>";
 
-    // Creamos el array con array_fill y Mostrar el array con join para separarlo por comas
-    $matriculas = array_fill(0, 10, "sinMatricula");
-    echo join(", ", $matriculas) . PHP_EOL;
+    // ForEach sin indice
+    foreach ($matriculas as $matricula) {
+        echo $matricula . PHP_EOL;
+    }
     echo "<br><br>";
 
     // Crear un array de 10 posiciones e inicializarlo con el valor por defecto "sinmatricula"

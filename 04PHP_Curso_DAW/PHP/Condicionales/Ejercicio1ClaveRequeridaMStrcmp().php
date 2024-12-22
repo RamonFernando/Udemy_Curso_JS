@@ -26,14 +26,14 @@ echo "<h1>Ejercicio 1 </h1>";
     <style>
         body{
             text-align: center;
-            font-family: 'Gill Sans MT'; 
-            background-color: #ded6c9; 
-            padding: 20px";
+            font-family: 'Gill Sans MT';
+            background-color:rgb(159, 148, 131);
+            padding: 20px;
         }
     </style>
     </head>
     <body>
-        <form action="Ejercicio1Condicionales.php" method="post">
+        <form action="Ejercicio1ClaveRequeridaMStrcmp().php" method="post">
             <input type="text" name="access" placeholder="Introduce la clave de acceso">
             <input type="submit" value="Enviar">
         </form>
@@ -43,24 +43,19 @@ echo "<h1>Ejercicio 1 </h1>";
 <?php
 // comprueba si la variable access existe y no esta vacía
 if(isset($_POST["access"]) && !empty($_POST["access"])) {
-//comprobación de que credencial introducida es correcta
 
-// Comprobamos si la clave es la correcta
-    if (strcmp($_POST["access"], CLAVE_REQUERIDA) === 0){
+    //comprobación de que credencial introducida es correcta
+    echo (strcmp($_POST["access"], CLAVE_REQUERIDA) === 0)
+            ? "<p>Acceso permitido</p>" : "<p>Acceso denegado</p>";
+
+
+
+    // Comprobamos si la clave es la correcta
+    /*if (strcmp($_POST["access"], CLAVE_REQUERIDA) === 0){
         //($_POST["access"] === CLAVE_REQUERIDA) {
         echo "<p>Acceso permitido</p>";
     } else {
         echo "<p>Acceso denegado</p>";
-    }
+    }*/
 }
-    // Pedimos la clave al usuario
-    #$clave = readline("Introduce la clave de acceso: ");
-    
-    // Utilizando la funcion strcmp 
-    // strcmp() compara dos cadenas de caracteres caracter x caracter y si son iguales devuelve 0
-    #if (strcmp($clave, CLAVE_REQUERIDA) === 0) {
-    #    echo "Acceso permitido\n";
-    #} else {
-    #    echo "Acceso denegado\n";
-    #}
 ?>

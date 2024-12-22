@@ -30,7 +30,7 @@ namespace EjerciciosConsola
             
             Console.ReadKey();
         }
-        /*
+        
         // Funcion que pide los datos por consola y devuelve un string
         public static string MostrarDatos() {
         
@@ -44,7 +44,7 @@ namespace EjerciciosConsola
         string datos = "Tu nombre es " + nombre + " y tienes " + edad + " años";
         return datos;
         }
-        */
+        
         // Funcion con los datos pasados como argumentos 
         public static void MostrarDatos(string nombre, int edad) {
             Console.WriteLine("Tu nombre es " + nombre + " y tienes " + edad + " años");
@@ -86,9 +86,7 @@ namespace EjerciciosConsola
                 }else{
                     Console.WriteLine("Introduce un numero valido: " + (3 - contador) + " intento/intentos");
                 }
-                
-                
-                
+            
             }
             }
             catch (System.Exception e) {

@@ -27,7 +27,7 @@ define("PASSWORD_REQUERIDO", "1234");
         body{
             text-align: center;
             font-family: 'Gill Sans MT';
-            background-color: #ded6c9;
+            background-color:rgb(164, 150, 126);
             padding: 20px";
         }
     </style>
@@ -45,11 +45,8 @@ define("PASSWORD_REQUERIDO", "1234");
     
     if(isset($_POST['nombre']) && isset($_POST['password'])) {
         if(!empty($_POST['nombre']) && !empty($_POST['password'])) {
-            if($_POST['nombre'] === NOMBRE_REQUERIDO && $_POST['password'] === PASSWORD_REQUERIDO) {
-                echo '<p>Acceso permitido</p>';
-            }else{
-                echo '<p>Acceso denegado</p>';
-            }
+            echo ($_POST['nombre'] === NOMBRE_REQUERIDO && $_POST['password'] === PASSWORD_REQUERIDO) ?
+                '<p>Acceso permitido</p>' : '<p>Acceso denegado</p>';
         }
     }else{
         echo '<p>Saliendo del programa...</p>';

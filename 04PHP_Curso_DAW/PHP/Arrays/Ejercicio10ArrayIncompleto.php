@@ -5,13 +5,13 @@
  *  entenderá que se ha terminado la compra, y mostrará todos los precios introducidos hasta el
  *  momento (no las posiciones vacías).
  */
-session_start();
+/*session_start();
 if (isset($_SESSION["precio"]) && !empty( $_SESSION["precio"] )) {
     $precio = ($_SESSION['precio']);
     $_SESSION['contador'] = 1;
     $_SESSION['contador']++;
     
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -41,11 +41,11 @@ if (isset($_SESSION["precio"]) && !empty( $_SESSION["precio"] )) {
 <body>
     <h2>Ejercicios</h2>
     <p>Arrays incompletos</p>
-    <form action="Ejercicio11ArrayIncompleto.php" method="post">
+    <form action="Ejercicio10ArrayIncompleto.php" method="post">
         <?php
+        echo "<label for='precioProducto'>Precios</label><br><br>";
         $i = 0;
         while ($i < 5){
-            echo "<label for='precioProducto'>Precio</label><br>";
             echo "<input type='text' name='precioProducto[]' placeholder = 'Introduce el precio " . ($i+1) .  "'><br><br>";
             $i++;
         }
@@ -71,7 +71,7 @@ if (isset($_SESSION["precio"]) && !empty( $_SESSION["precio"] )) {
                 }
             }
             echo "<p>Precio total: " . $precioTotal . " €</p>";
-            session_unset();
+            // session_unset();
         }
     ?>
     <p>FIN</p>

@@ -32,15 +32,32 @@
             background-color: #ffffff;
             cursor: pointer;
         }
+        .menu{
+            text-align: left;
+            width: 20%;
+            margin: auto;
+            padding-left: 12%;
+        }
+        .container{
+            margin: auto;
+            width: 550px;
+        }
+        input{
+            border-radius: 4px;
+        }
+
     </style>
 </head>
 <body>
+    <div class="container">
     <h2>Ejercicios</h2>
     <h4>Calculadora</h4>
-    <p>1) Suma</p> 
-    <p>2) Resta</p>
-    <p>3) Multiplicación</p>
-    <p>4) División</p> 
+    <div class="menu">
+        <p>1) Suma</p> 
+        <p>2) Resta</p>
+        <p>3) Multiplicación</p>
+        <p>4) División</p> 
+    </div>
     <form action="Ejercicio17.php" method="post">
         <label for="num1">Número1:</label>
         <input type="number" name="num1" step="0.01" placeholder="Introduce un numero" required><br><br>
@@ -50,6 +67,7 @@
         <input type="number" name="operacion" placeholder="Introduce una operacion" required><br><br>
         <input type="submit" class="boton" value="Enviar">
     </form>
+    </div>
     
     <?php
         if(isset($_POST['num1']) && isset($_POST['num2'])) {
