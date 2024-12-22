@@ -105,6 +105,18 @@ namespace _09_Curso_C_
                 Console.Write("index: " + index + " ");
                 index++;
             } while (index < 10);
+            int numeroPositivo = 0;
+
+            // Introduciendo un numero positivo por consola
+            do {
+                Console.Write("Introduce un numero positivo: ");
+                numeroPositivo = int.Parse(Console.ReadLine());
+                if(numeroPositivo > 0) {
+                    Console.WriteLine("El numero es: " + numeroPositivo);
+                }else{
+                    Console.WriteLine("El numero no es valido");
+                }
+            }while (numeroPositivo != 0);
 
             Console.WriteLine();
             // Funciones
