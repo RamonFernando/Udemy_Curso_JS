@@ -25,7 +25,7 @@ function agregarPersona(){
 function borrarPersona(){
     let id = parseInt(prompt("Inserte el número de la persona a borrar"));
     if (isNaN(id) || id == null) { // Comprobamos que el id sea un numero y no nulo
-        alert("Error! El número ingresado no es valido.");
+        alert("Error! Valor no numérico o nulo.");
         return;
     }
     (id > personas.length || id < 1) ? alert("Persona no encontrada") : personas.splice(id - 1, 1);
