@@ -26,6 +26,10 @@ function agregarPersona() {
     if ((nombre.value == "" || apellido.value == "")) {     // Verifica que los campos no estén vacíos.
         alert("Por favor, completa todos los campos.");     // Muestra un mensaje si faltan datos.
     } else {
+        // método find devuelve el primer elemento que coincide con la condición o undefined si no se encuentra ninguno
+        if (personas.find(persona => persona.nombre == nombre.value && persona.apellido == apellido.value))
+            return alert("Error! Persona ya existente");
+        
         (!regex.test(nombre.value) || !regex.test(apellido.value)) // Valida que los valores cumplan con la expresión regular.
             ? alert("Caracteres no permitidos")             // Alerta si los valores contienen caracteres no permitidos.
             : personas.push(new Persona(nombre.value, apellido.value)); // Agrega una nueva instancia de Persona al array.
@@ -38,7 +42,7 @@ function agregarPersona() {
 function borrarPersona() {
     let id = parseInt(prompt("Inserte el número de la persona a borrar")); // Solicita al usuario un índice numérico.
     if (isNaN(id) || id == null) {                  // Comprueba que el valor ingresado sea un número válido y no nulo.
-        alert("Error! El número ingresado no es válido."); // Muestra un mensaje de error si el valor no es válido.
+        alert("Error! Valor no numérico o nulo.");  // Muestra un mensaje de error si el valor no es válido.
         return;                                     // Finaliza la ejecución de la función.
     }
     (id > personas.length || id < 1)                // Verifica si el número ingresado está dentro del rango del array.
