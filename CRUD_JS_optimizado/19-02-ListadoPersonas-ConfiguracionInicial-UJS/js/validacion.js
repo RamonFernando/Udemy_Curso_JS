@@ -13,30 +13,88 @@ function mostrarPersonas() {
 function agregarPersona() {
     const {nombre, apellido} = document.forms['forma']; // (Desestructuración) accedemos al formulario con forms
     
-    if (personas.find(persona => persona.nombre == nombre.value && persona.apellido == apellido.value))
-        return alert("Error! Persona ya existente");
-    
-    (nombre.value == "" || apellido.value == "")? alert("Error!"):
+    if (personas.find(persona => persona.nombre == nombre.value && persona.apellido == apellido.value)){
+        mensajeInformacion("Persona ya existente.");
+        return;
+    }
+
+    if(nombre.value == "" || apellido.value == ""){
+        // alert("Error! Campos vacios");
+        mensajeInformacion("Campleta todos los campos.");
+    }else{
         personas.push(new Persona(nombre.value, apellido.value));
-    
+        mensajeExitoso("Persona agregada con exito.");
+    }
     mostrarPersonas();
+    
 }
 function actualizarPersona() {
     let num = parseInt(prompt("Ingresa el número que deseas actualizar."));
-    if (num < 1 || num > personas.length || isNaN(num)) { 
-        alert("Error! Número no valido o nulo.");
+    if (num < 1 || num > personas.length || isNaN(num)) {
+        mensajeError("Error! Número no valido o nulo.");
+        
     }else{
         let nuevaPersona = (prompt("Introduce la informacion que deseas actualizar"));
         let [nombre, apellido] = nuevaPersona.trim().split(" "); // (Desestructuración)
-        (nombre == undefined || apellido == undefined) ? alert("Error! ") : personas.splice(num-1, 1, new Persona(nombre, apellido));
+        if(nombre == undefined || apellido == undefined){
+            mensajeInformacion("Informacion no actualizada, nombre o apellidos vacios.");
+        }else{
+            personas.splice(num-1, 1, new Persona(nombre, apellido));
+            mensajeExitoso(`Información actualizada del id: ${num}. ${nombre}  ${apellido}`);
+        }
     }
     mostrarPersonas();
 }
 function borrarPersona() {
     let num = parseInt(prompt("Ingresa el id que deseas eliminar."));
-    (num < 1 || num > personas.length || isNaN(num)) ? alert("Error! ") : personas.splice((num-1), 1);
+    if(num < 1 || num > personas.length || isNaN(num)){
+        mensajeError("Error! Número no valido o nulo.")
+    }else{
+        personas.splice((num-1), 1);
+        mensajeExitoso(`Información borrada del id: ${num}.`);
+    }
+        
     
     mostrarPersonas();
+}
+function mensajeExitoso(texto){
+    let mensaje = document.getElementById('textoInfoAgregar');
+    let contenedor = document.getElementById('infoAgregar');
+    if(mensaje && contenedor){
+        mensaje.innerHTML = texto;
+        contenedor.style.display = 'block'; // Muestra el contenedor
+        
+        setTimeout(() => { // Desaparece el contenedor 3seg
+            contenedor.style.display = 'none';
+            mensaje.innerHTML = '';
+        }, 3000);
+    }
+}
+function mensajeInformacion(texto){
+    let mensaje = document.getElementById('textoInfoActualizar');
+    let contenedor = document.getElementById('infoActualizar');
+    if(mensaje && contenedor){
+        mensaje.innerHTML = texto;
+        contenedor.style.display = 'block';
+        
+        setTimeout(() => {
+            contenedor.style.display = 'none';
+            mensaje.innerHTML = '';
+        }, 3000);
+    }
+}
+function mensajeError(texto){
+    let mensaje = document.getElementById('textoInfoBorrar');
+    let contenedor = document.getElementById('infoError');
+    if(mensaje && contenedor){
+        mensaje.innerHTML = texto;
+        contenedor.style.display = 'block';
+        
+        setTimeout(() => {
+            contenedor.style.display = 'none';
+            mensaje.innerHTML = '';
+        }, 3000);
+    }
 }
 
 // Explicación de los métodos
