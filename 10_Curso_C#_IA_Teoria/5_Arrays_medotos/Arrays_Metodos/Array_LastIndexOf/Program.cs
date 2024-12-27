@@ -9,7 +9,7 @@ namespace Array_LastIndexOf
     internal class Program
     {
         static void Main(string[] args)
-        {   
+        {
             /*
             El método LastIndexOf() se utiliza para buscar la última aparición de un elemento específico dentro de una matriz. 
             A diferencia de IndexOf(), que busca desde el principio, LastIndexOf() comienza la búsqueda desde el final de la matriz. 
