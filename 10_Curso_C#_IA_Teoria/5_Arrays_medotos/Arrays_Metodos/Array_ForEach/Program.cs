@@ -18,6 +18,7 @@ namespace Array_ForEach
             Array.ForEach(numeros, n => Console.Write(n * 2 + " "));
             // Salida: 2 4 6 8 10
 
+            Console.ReadKey();
         }
     }
 }
