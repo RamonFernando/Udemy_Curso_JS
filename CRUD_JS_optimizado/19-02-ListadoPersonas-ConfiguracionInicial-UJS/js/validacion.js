@@ -18,7 +18,7 @@ function agregarPersona() {
         return;
     }
 
-    if(nombre.value == "" || apellido.value == ""){
+    if((nombre.value == "") || apellido.value == ""){
         // alert("Error! Campos vacios");
         mensajeInformacion("Campleta todos los campos.");
     }else{
@@ -57,6 +57,7 @@ function borrarPersona() {
     
     mostrarPersonas();
 }
+// ** ----------------------------- Eventos -------------------------------------- ** //
 function mensajeExitoso(texto){
     let mensaje = document.getElementById('textoInfoAgregar');
     let contenedor = document.getElementById('infoAgregar');

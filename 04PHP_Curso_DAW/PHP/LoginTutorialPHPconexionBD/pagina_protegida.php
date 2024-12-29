@@ -88,6 +88,7 @@ function esUrlValida($texto) {
             <button type="submit" name="create">Agregar</button>
         </form>
 
+        <div class="table-container">
         <!-- Tabla para mostrar los elementos -->
         <table>
             <thead>
@@ -119,7 +120,8 @@ function esUrlValida($texto) {
                     </tr>
                 <?php endwhile; ?>
             </tbody>
-        </table>
+        </table> <!-- Fin de la tabla -->
+        </div><!-- Fin del contenedor -->
     </div>
 
     <!-- Botones adicionales -->
