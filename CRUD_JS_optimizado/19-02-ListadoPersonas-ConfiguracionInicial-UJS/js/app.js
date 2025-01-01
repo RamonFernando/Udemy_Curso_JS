@@ -57,8 +57,15 @@ function actualizarPersona() {
     let id = parseInt(prompt("Inserte el número de la persona a actualizar")); // Solicita el índice de la persona a modificar.
     if (id > personas.length || id < 1) {           // Valida que el índice esté dentro del rango permitido.
         alert("Persona no encontrada");             // Alerta si el índice es inválido.
+        
     } else {
         let nuevoNombre = prompt("Inserte el nuevo nombre y apellido"); // Solicita un nuevo nombre completo al usuario.
+        let nombre = nuevoNombre.trim().split(" ")[0]; // Extrae el primer nombre eliminando espacios adicionales.
+        let apellido = nuevoNombre.trim().split(" ")[1]; // Extrae el apellido eliminando espacios adicionales.
+        if(personas.find(persona => persona.nombre == nombre && persona.apellido == apellido)){ // Comprueba si la persona ya existe en el array.
+            alert("Error! Persona ya existente");
+            return;
+        }
         (nuevoNombre == "" || !nuevoNombre || !regex.test(nuevoNombre)) // Valida que el nombre no esté vacío, sea válido y cumpla con la expresión regular.
             ? alert("Información no actualizada")   // Alerta si la entrada no es válida.
             : personas[id - 1] = new Persona(       // Actualiza la información de la persona en la posición correspondiente.
