@@ -51,7 +51,6 @@ if ($stmt->execute()) { // devuelve true en caso de exito o false en caso de err
     echo "Error: " . $stmt->error;
 }
 
-// Cerrar conexiones
-$stmt->close();
+$stmt->close(); // Cerrar conexiones
 $conn->close(); // $conn almacena una instancia de la clase mysqli, que representa una conexión activa con una base de datos MySQL.
 ?>

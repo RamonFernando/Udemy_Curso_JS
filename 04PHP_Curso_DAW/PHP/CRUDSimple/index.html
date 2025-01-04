@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <title>CRUD en PHP</title>
+</head>
+<body>
+
+<h1>Crear registro:</h1>
+<form action="" method="post">
+  <label for="nombre">Nombre:</label><br>
+  <input type="text" id="nombre" name="nombre"><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email"><br><br>
+  <input type="submit" name="crear" value="Crear registro">
+</form>
+
+<h1>Actualizar registro:</h1>
+<form action="" method="post">
+  <label for="id">ID:</label><br>
+  <input type="number" id="id" name="id"><br>
+  <label for="nombre">Nombre:</label><br>
+  <input type="text" id="nombre" name="nombre"><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email"><br><br>
+  <input type="submit" name="actualizar" value="Actualizar registro">
+</form>
+
+<h1>Eliminar registro:</h1>
+<form action="" method="get">
+  <label for="id">ID:</label><br>
+  <input type="number" id="id" name="id"><br><br>
+  <input type="submit" name="eliminar" value="Eliminar registro">
+</form>
+
+<h1>Leer registros:</h1>
+<form action="" method="get">
+  <label for="id">ID:</label><br>
+  <input type="number" id="id" name="id"><br><br>
+  <input type="submit" name="leer" value="Ver registro">
+</form>
+
+</body>
+</html>
