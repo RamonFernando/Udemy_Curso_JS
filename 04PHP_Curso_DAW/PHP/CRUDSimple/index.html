@@ -8,40 +8,49 @@
     <title>CRUD en PHP</title>
 </head>
 <body>
+  <h1>Leer registros:</h1>
+  <form action="crud.php" method="post">
+    <!--<label for="id">ID:</label><br>
+    <input type="number" id="id" name="id"><br><br>-->
+    
+    <input type="hidden" name="type" value="read">
+    <input type="submit" name="leer" value="Ver registros">
+  </form>
 
-<h1>Crear registro:</h1>
-<form action="" method="post">
-  <label for="nombre">Nombre:</label><br>
-  <input type="text" id="nombre" name="nombre"><br>
-  <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email"><br><br>
-  <input type="submit" name="crear" value="Crear registro">
-</form>
+  <h1>Crear registro:</h1>
+  <form action="crud.php" method="post">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre"><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    
+    <input type="hidden" name="type" value="create">
+    <input type="submit" name="crear" value="Crear registro">
+  </form>
 
-<h1>Actualizar registro:</h1>
-<form action="" method="post">
-  <label for="id">ID:</label><br>
-  <input type="number" id="id" name="id"><br>
-  <label for="nombre">Nombre:</label><br>
-  <input type="text" id="nombre" name="nombre"><br>
-  <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email"><br><br>
-  <input type="submit" name="actualizar" value="Actualizar registro">
-</form>
+  <h1>Actualizar registro:</h1>
+  <form action="crud.php" method="post">
+    <label for="id">ID:</label><br>
+    <input type="number" id="id" name="id"><br>
+    
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre"><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+    
+    <input type="hidden" name="type" value="update">
+    <input type="submit" name="actualizar" value="Actualizar registro">
+  </form>
 
-<h1>Eliminar registro:</h1>
-<form action="" method="get">
-  <label for="id">ID:</label><br>
-  <input type="number" id="id" name="id"><br><br>
-  <input type="submit" name="eliminar" value="Eliminar registro">
-</form>
-
-<h1>Leer registros:</h1>
-<form action="" method="get">
-  <label for="id">ID:</label><br>
-  <input type="number" id="id" name="id"><br><br>
-  <input type="submit" name="leer" value="Ver registro">
-</form>
-
+  <h1>Eliminar registro:</h1>
+  <form action="crud.php" method="post">
+    <label for="id">ID:</label><br>
+    <input type="number" id="id" name="id"><br><br>
+    
+    <input type="hidden" name="type" value="delete">
+    <input type="submit" name="eliminar" value="Eliminar registro">
+  </form>
 </body>
 </html>

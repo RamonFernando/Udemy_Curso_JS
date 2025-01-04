@@ -1,7 +1,8 @@
 <?php
+function create_connection() {
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "crud_db";
 
 // Create connection
@@ -15,7 +16,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Fallo de conexion: " . $conn->connect_error);
 }
+return $conn;
 
+}
+//función crear conexión
+
+//sino die, return $conn
+
+/*
 // CREATE DATABASE crud_db;
 USE crud_db;
 // SQL to create table
@@ -32,5 +40,5 @@ if ($conn->query($sql) === TRUE) {
     echo "Error al crear la tabla: " . $conn->error;
 }
 
-$conn->close();
+$conn->close();*/
 ?>
