@@ -1,27 +1,23 @@
 <?php
 function create_connection() {
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "crud_db";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "crud_db";
 
-// Create connection
-// servername: nombre del servidor
-// username: nombre de usuario
-// password: contrasenia
-// dbname: nombre de la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
+    // Create connection
+    // servername: nombre del servidor
+    // username: nombre de usuario
+    // password: contrasenia
+    // dbname: nombre de la base de datos
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Fallo de conexion: " . $conn->connect_error);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Fallo de conexion: " . $conn->connect_error);
+    }
+    return $conn;
 }
-return $conn;
-
-}
-//función crear conexión
-
-//sino die, return $conn
 
 /*
 // CREATE DATABASE crud_db;

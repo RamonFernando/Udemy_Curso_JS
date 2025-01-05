@@ -13,6 +13,9 @@ SELECT * FROM usuarios WHERE id = $id;
 UPDATE usuarios SET nombre = '$nombre', email = '$email' WHERE id = $id;
 DELETE FROM usuarios WHERE id = $id;
 */
+// obtenemos la variable mensaje
+$message = isset($_GET['message']) ? $_GET['message'] : '';
+
 $conn = create_connection();
 if(isset($_POST['type'])){
     switch($_POST['type']){
@@ -35,40 +38,47 @@ function create($conn, $nombre, $email){
     if (isset($_POST['crear'])){
         $nombre = $_POST['nombre'];
         $email = $_POST['email'];
-
-        // realizamos consulta para insertar
+        echo "<br><a href='index.html'>Volver</a>";
+        
         $sql = "INSERT INTO usuarios (nombre, email) VALUES ('$nombre','$email')";
 
         // comprobamos si el usuario ya existe en la base de datos
-        /*$checkSql = "SELECT * FROM usuarios WHERE nombre = '$nombre' AND email = '$email'";
+        $checkSql = "SELECT * FROM usuarios WHERE nombre = '$nombre' AND email = '$email'";
         $result = $conn->query($checkSql);
         if ($result->num_rows > 0) {
-            echo "El usuario ya existe";
+            echo "<h3>El usuario ya existe</h3>";
             exit();
-        }*/
+        }
+
+        // comprobamos que los campos no esten vacios
         if(empty($nombre) || empty($email)){
-            echo "Todos los campos son obligatorios";
+            echo "<h3>Todos los campos son obligatorios</h3>";
             return;
         }
+
         // Comprobamos si la consulta se ha realizado correctamente
-        // $conn almacena la conexión a la base de datos
         if($conn->query($sql) === TRUE) {
-            echo "Nuevo registro creado exitosamente: " . $conn->insert_id . "<br><br>";
+            echo "<h3>Nuevo registro creado exitosamente: " . $conn->insert_id . "</h3><br>";
             read($conn);
         } else {
-            echo "Error al crear el registro: " . $sql . "<br>" . $conn->error; // $conn->error devuelve el error de la consulta
+            echo "<h3>Error al crear el registro: $sql  $conn->error </h3><br>"; // $conn->error devuelve el error de la consulta
         }
+        
     }
 }
 // READ
 function read($conn){
-    // realizamos consulta para leer
-    $sql = "SELECT * FROM usuarios";
-
-    // Comprobamos si la consulta se ha realizado correctamente
     // num_rows — Devuelve el número de filas de un conjunto de resultados de una sentencia mysqli_stmt::$num_rows
     // fetch_assoc() — Obtiene una fila de resultados como un arreglo asociativo
-    $result = $conn->query($sql);   // result almacena el conjunto de resultados query realiza la consulta
+    // result — almacena el conjunto de resultados
+    // query — realiza la consulta
+    // row — almacena una fila de resultados
+    echo "<br><a href='index.html'>Volver</a><br><br>";
+
+    $sql = "SELECT * FROM usuarios";
+    
+    // Comprobamos si la consulta se ha realizado correctamente y mostramos el resultado
+    $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "ID: " . $row["id"] . "<br>";
@@ -77,7 +87,7 @@ function read($conn){
             echo "<br>";
         }
     } else {
-        echo "No se han encontrado registros";
+        echo "<h3>No se han encontrado registros</h3>";
     }
 }
 // UPDATE
@@ -86,21 +96,68 @@ function update($conn, $id, $nombre, $email){
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $email = $_POST['email'];
+        echo "<br><a href='index.html'>Volver</a><br><br>";
+        
+        // comprobamos que los campos no esten vacios
+        if(empty($nombre) || empty($email) || empty($id) || $id <= 0){
+            echo "<h3>Todos los campos son obligatorios</h3>";
+            return;
+        }
+        // comprobamos si el id existe en la base de datos
+        $checkSql = "SELECT * FROM usuarios WHERE id = $id";
+        $result = $conn->query($checkSql);
+        if ($result->num_rows == 0) {
+            echo "<h3>El id $id no existe.</h3>";
+            read($conn);
+            exit();
+        }
+        // comprobamos si el usuario ya existe en la base de datos
+        $checkSql = "SELECT * FROM usuarios WHERE nombre = '$nombre' AND email = '$email'";
+        $result = $conn->query($checkSql);
+        if ($result->num_rows > 0) {
+            echo "<h3>El usuario ya existe</h3>";
+            exit();
+        }
 
         // realizamos consulta para actualizar
         $sql = "UPDATE usuarios SET nombre = '$nombre', email = '$email' WHERE id = $id";
-        echo ($conn->query($sql) === TRUE ) ? "Registro actualizado con exito" : "Error al actualizar el registro: " . $conn->error;
+        if ($conn->query($sql) === TRUE ){
+            echo "Registro actualizado con exito: <br>Id: $id <br>Nombre: $nombre <br>Email: $email <br><br>";
+            read($conn);
+        }else{
+        echo "<h3>Error al actualizar el registro: " . $conn->error . "</h3>";
+        }
     }
 }
-
 // DELETE
 function delete($conn, $id){
     if(isset($_POST['eliminar'])){
         $id = $_POST['id'];
+        
+        // comprobamos que el id no este vacio
+        if(empty($id)){
+            echo "<h3>Ingrese un id</h3>";
+            echo "<br><a href='index.html'>Volver</a><br><br>";
+            return;
+        }
+
+        // comprobamos si el id existe en la base de datos
+        $checkSql = "SELECT * FROM usuarios WHERE id = $id";
+        $result = $conn->query($checkSql);
+        if ($result->num_rows == 0) {
+            echo "<h3>El id $id no existe.</h3>";
+            read($conn);
+            exit();
+        }
 
         // realizamos consulta para borrar
         $sql = "DELETE FROM usuarios WHERE id = $id";
-        echo ($conn->query($sql) === TRUE) ? "Registro borrado exitosamente" : "Error al borrar el registro: " . $sql . "<br>" . $conn->error;
+        if ($conn->query($sql) === TRUE){
+            echo "<h3>El registro $id a sido borrado exitosamente! </h3><br>";
+            read($conn);
+        }else{
+            echo "<h3>Error al borrar el registro: $sql $conn->error </h3>";
+        }
     }
 }
 // Cerrar conexión
