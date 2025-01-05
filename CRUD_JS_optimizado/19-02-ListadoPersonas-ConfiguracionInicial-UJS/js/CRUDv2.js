@@ -13,12 +13,13 @@ function mostrarPersonas(){
 }
 function agregarPersona(){
     const {nombre, apellido} = document.forms['forma'];
-    if(personas.find(p => p.nombre === nombre.value.trim() && p.apellido === apellido.value.trim())) 
+    if(personas.find(p => p.nombre === nombre.value.trim() && p.apellido === apellido.value.trim()))
         {alert("La persona ya existe!"); return;}
+    
     if (nombre.value && apellido.value){
-        if(!regex.test(nombre.value) || !regex.test(apellido.value)) {alert("Caracteres no permitidos"); return;} 
-        personas.push(new Persona(nombre.value, apellido.value));     
-        alert("Persona agregada con exito"); 
+        if(!regex.test(nombre.value) || !regex.test(apellido.value)) {alert("Caracteres no permitidos"); return;}
+        personas.push(new Persona(nombre.value, apellido.value));
+        alert("Persona agregada con exito");
     } else {
         alert("Completa todos los campos.");
     }
@@ -31,7 +32,7 @@ function actualizarPersona(){
     
     let nuevoNombre = prompt("Ingrese el nuevo nombre");
     let nuevoApellido = prompt("Ingrese el nuevo apellido");
-    if(personas.find(p => p.nombre === nuevoNombre.trim() && p.apellido === nuevoApellido.trim())) 
+    if(personas.find(p => p.nombre === nuevoNombre.trim() && p.apellido === nuevoApellido.trim()))
         {alert("La persona ya existe!"); return;}
     
     if(nuevoNombre.trim() && nuevoApellido.trim()) {
@@ -46,8 +47,8 @@ function actualizarPersona(){
 }
 function borrarPersona(){
     let num = parseInt(prompt("Ingrese el número de la persona que desea eliminar"));
-    if(num == "" || isNaN(num) || num < 1 || num > personas.length) 
-        {alert("Error, numero no valido o nulo"); return;} 
+    if(num == "" || isNaN(num) || num < 1 || num > personas.length)
+        {alert("Error, numero no valido o nulo"); return;}
     alert(`Se ha eliminado a la persona ${num} ${personas[num-1].nombre} ${personas[num-1].apellido} con exito!`);
     personas.splice(num -1, 1);
     mostrarPersonas();

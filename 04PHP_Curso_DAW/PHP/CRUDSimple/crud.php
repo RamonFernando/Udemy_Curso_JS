@@ -12,7 +12,7 @@ INSERT INTO usuarios (nombre, email) VALUES ('$nombre','$email');
 SELECT * FROM usuarios WHERE id = $id;
 UPDATE usuarios SET nombre = '$nombre', email = '$email' WHERE id = $id;
 DELETE FROM usuarios WHERE id = $id;
-*/
+*//*
 // obtenemos la variable mensaje
 $message = isset($_GET['message']) ? $_GET['message'] : '';
 
@@ -38,7 +38,7 @@ function create($conn, $nombre, $email){
     if (isset($_POST['crear'])){
         $nombre = $_POST['nombre'];
         $email = $_POST['email'];
-        echo "<br><a href='index.html'>Volver</a>";
+        boton_volver();
         
         $sql = "INSERT INTO usuarios (nombre, email) VALUES ('$nombre','$email')";
 
@@ -47,12 +47,12 @@ function create($conn, $nombre, $email){
         $result = $conn->query($checkSql);
         if ($result->num_rows > 0) {
             echo "<h3>El usuario ya existe</h3>";
-            exit();
+            return;
         }
 
         // comprobamos que los campos no esten vacios
         if(empty($nombre) || empty($email)){
-            echo "<h3>Todos los campos son obligatorios</h3>";
+            echo "<h3>Todos los campos son obligatorios!</h3>";
             return;
         }
 
@@ -63,7 +63,6 @@ function create($conn, $nombre, $email){
         } else {
             echo "<h3>Error al crear el registro: $sql  $conn->error </h3><br>"; // $conn->error devuelve el error de la consulta
         }
-        
     }
 }
 // READ
@@ -73,7 +72,7 @@ function read($conn){
     // result — almacena el conjunto de resultados
     // query — realiza la consulta
     // row — almacena una fila de resultados
-    echo "<br><a href='index.html'>Volver</a><br><br>";
+    boton_volver();
 
     $sql = "SELECT * FROM usuarios";
     
@@ -96,27 +95,29 @@ function update($conn, $id, $nombre, $email){
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $email = $_POST['email'];
-        echo "<br><a href='index.html'>Volver</a><br><br>";
+        boton_volver();
         
         // comprobamos que los campos no esten vacios
         if(empty($nombre) || empty($email) || empty($id) || $id <= 0){
             echo "<h3>Todos los campos son obligatorios</h3>";
             return;
         }
+
         // comprobamos si el id existe en la base de datos
         $checkSql = "SELECT * FROM usuarios WHERE id = $id";
         $result = $conn->query($checkSql);
         if ($result->num_rows == 0) {
             echo "<h3>El id $id no existe.</h3>";
             read($conn);
-            exit();
+            return;
         }
+
         // comprobamos si el usuario ya existe en la base de datos
         $checkSql = "SELECT * FROM usuarios WHERE nombre = '$nombre' AND email = '$email'";
         $result = $conn->query($checkSql);
         if ($result->num_rows > 0) {
             echo "<h3>El usuario ya existe</h3>";
-            exit();
+            return;
         }
 
         // realizamos consulta para actualizar
@@ -136,8 +137,8 @@ function delete($conn, $id){
         
         // comprobamos que el id no este vacio
         if(empty($id)){
-            echo "<h3>Ingrese un id</h3>";
-            echo "<br><a href='index.html'>Volver</a><br><br>";
+            echo "<h3>Ingrese un id valido.</h3>";
+            boton_volver();
             return;
         }
 
@@ -147,7 +148,7 @@ function delete($conn, $id){
         if ($result->num_rows == 0) {
             echo "<h3>El id $id no existe.</h3>";
             read($conn);
-            exit();
+            return;
         }
 
         // realizamos consulta para borrar
@@ -160,6 +161,9 @@ function delete($conn, $id){
         }
     }
 }
+function boton_volver(){
+    echo "<br><a href='index.html'>Volver</a><br>";
+}
 // Cerrar conexión
-$conn->close();
+$conn->close();*/
 ?>
