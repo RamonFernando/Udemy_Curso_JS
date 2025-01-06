@@ -48,6 +48,15 @@ input[type="number"] {
     font-size: 16px;
     box-sizing: border-box; /* Prevents overflowing */
 }
+#btn_volver{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Prevents overflowing */
+}
 
 /* Submit button styles */
 input[type="submit"] {

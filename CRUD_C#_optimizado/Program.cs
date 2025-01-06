@@ -10,7 +10,7 @@ namespace SimpleCRUD {
         }
 
         static void Main(string[] args){
-            List<Persona> personas = new List<Persona>();
+            List<Persona> personas = new List<Persona>();      // Lista para almacenar las personas
             int contadorId = 1;
 
             while (true){
@@ -28,7 +28,7 @@ namespace SimpleCRUD {
                         // Crear
                         Console.Write("Ingresa el nombre: ");
                         string nombre = Console.ReadLine();
-                        personas.Add(new Persona { Id = contadorId++, Nombre = nombre });
+                        personas.Add(new Persona { Id = contadorId++, Nombre = nombre }); // Agrega un nuevo elemento y incrementa el contador
                         Console.WriteLine("Persona creada exitosamente.");
                         break;
 
@@ -43,8 +43,8 @@ namespace SimpleCRUD {
                     case "3":
                         // Actualizar
                         Console.Write("Ingresa el ID de la persona a actualizar: ");
-                        if (int.TryParse(Console.ReadLine(), out int idActualizar)) {
-                            var persona = personas.Find(p => p.Id == idActualizar);
+                        if (int.TryParse(Console.ReadLine(), out int idActualizar)) {   // Convierte la entrada a un entero
+                            var persona = personas.Find(p => p.Id == idActualizar);     // Busca la persona por ID con Find: busca el primer elemento que cumpla la condicion o devuelve null
                             
                             if (persona != null) {
                                 Console.Write("Ingresa el nuevo nombre: ");
@@ -62,11 +62,11 @@ namespace SimpleCRUD {
                         // Eliminar
                         Console.Write("Ingresa el ID de la persona a eliminar: ");
                         
-                        if (int.TryParse(Console.ReadLine(), out int idEliminar)) {
+                        if (int.TryParse(Console.ReadLine(), out int idEliminar)) { // Convierte la entrada a un entero
                             var persona = personas.Find(p => p.Id == idEliminar);
                             
                             if (persona != null) {
-                                personas.Remove(persona);
+                                personas.Remove(persona); // Elimina la persona
                                 Console.WriteLine("Persona eliminada exitosamente.");
                             } else {
                                 Console.WriteLine("Persona no encontrada.");

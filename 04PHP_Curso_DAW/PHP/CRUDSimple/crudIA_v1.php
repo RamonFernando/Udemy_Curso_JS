@@ -1,4 +1,5 @@
 <?php
+/*
 include("createBD.php");
 echo "<h1>CRUD Simple v1</h1>";
 $conn = create_connection(); // Conectar a la base de datos
@@ -60,5 +61,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         delete($conn);
     }
 }
-$conn->close();
+$conn->close();*/
 ?>
