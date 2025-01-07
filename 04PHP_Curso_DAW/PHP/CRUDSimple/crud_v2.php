@@ -43,11 +43,12 @@ function create ($conn){
 }
 // READ
 function read($conn) {
-    if(isset($_POST['leer'])){ // Obtenemos los datos del formulario y mostramos los registros
+    if(isset($_POST['leer'])){ // Obtenemos los datos del formulario y mostramos los registros o un mensaje de registros vacios
         $sqlConsulta = "SELECT * FROM usuarios";
         $resultado = $conn->query($sqlConsulta);
 
         echo "<h2>Usuarios</h2>";
+        // 1. Mostramos los registros mediante un bucle
         if($resultado->num_rows > 0){
             while($row = $resultado->fetch_assoc()){
                 echo "<p>[Usuario: " . $row['id'] . "] Nombre: " . $row['nombre'] . ", Email: " . $row['email'] . "</p>";
@@ -63,7 +64,7 @@ function update($conn) {
         // 1. Comprobamos si los campos están vacíos
         if(empty($id) || empty($nombre) || empty($email)){echo "El campo no puede estar vacio!"; return;};
 
-        // 2. Comprobamos que el id sea un numero
+        // 2. Comprobamos que el id sea un numero y que el campo no esté vacio
         if(!is_numeric($id)) {echo "El id debe ser un numero!"; return;}
         
         // 3. Comprobamos que no tengan caracteres especiales y validamos el email
@@ -89,12 +90,12 @@ function delete($conn) {
     if(isset($_POST['eliminar'])){
         $id = $_POST['id'];
 
-        // 1. Comprobamos si el usuario existe en la base de datos
+        // 1. Comprobamos que el id sea un numero y que el campo no esté vacio
+        if(!is_numeric($id)) {echo "El id debe ser un numero valido!"; return;}
+
+        // 2. Comprobamos si el usuario existe en la base de datos
         $sqlCheck = "SELECT * FROM usuarios WHERE id = '$id'";
         if($conn->query($sqlCheck)->num_rows == 0){echo "El usuario no existe en la base de datos."; return;}
-
-        // 2. Comprobamos que el id sea un numero
-        if(!is_numeric($id)) {echo "El id debe ser un numero!"; return;}
 
         // 3. Comprobamos si la consulta se ha realizado correctamente
         $sqlConsulta = "DELETE FROM usuarios WHERE id = '$id'";
