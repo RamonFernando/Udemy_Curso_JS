@@ -72,4 +72,13 @@ function sumarNumeros(...$numeros) {
     return $total;
 }
 echo sumarNumeros(1, 2, 3, 4, 5);
+
+// Funciones con parámetros por referencia
+function incrementar($num) {
+    $num++;
+}
+$num = 5;
+incrementar($num);
+echo $num;
+
 ?>
