@@ -10,6 +10,7 @@ function create_connection() {
     // username: nombre de usuario
     // password: contrasenia
     // dbname: nombre de la base de datos
+    // $conn (conexión)
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection

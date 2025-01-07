@@ -61,7 +61,7 @@ public class Ej2_While_if_Swich_Break {
             }
     }
     
-    System.out.println("\nFIN");
+    System.out.println("\nFin del Programa");
     sc.close();
     }
 }
