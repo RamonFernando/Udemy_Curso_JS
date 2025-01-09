@@ -20,7 +20,7 @@ function agregarPersona(){
     if(!validarMaximoNombresApellidos(nombre.value, apellido.value))
         {alert("Debes ingresar máximo 2 nombres y 2 apellidos"); return;}
 
-    if((nombre.value.length + apellido.value.length) > 10)
+    if((nombre.value.length + apellido.value.length) > 50)
         {alert("El nombre y apellidos deben tener máximo 50 caracteres");return;}
 
     if (nombre.value && apellido.value){
@@ -45,7 +45,7 @@ function actualizarPersona(){
     if(!validarMaximoNombresApellidos(nuevoNombre, nuevoApellido))
         {alert("Debes ingresar máximo 4 nombres y 2 apellidos"); return;}
 
-    if(nombres.value.concat(apellidos.value).length > 50)
+    if((nuevoNombre.length + nuevoApellido.length) > 50)
         {alert("El nombre y apellidos deben tener máximo 50 caracteres");return;}
     
     if(nuevoNombre.trim() && nuevoApellido.trim()) {
