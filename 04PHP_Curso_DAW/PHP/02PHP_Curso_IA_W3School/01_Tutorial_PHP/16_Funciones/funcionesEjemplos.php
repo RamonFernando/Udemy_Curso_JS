@@ -74,6 +74,7 @@ function sumarNumeros(...$numeros) {
 echo sumarNumeros(1, 2, 3, 4, 5);
 
 // Funciones con parámetros por referencia
+// Ejemplo: esta funcion incrementa el valor de la variable
 function incrementar($num) {
     $num++;
 }

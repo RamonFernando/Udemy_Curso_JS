@@ -18,6 +18,11 @@ function agregarPersona() {
         return;
     }
 
+    // Validar 2 nombres y 2 apellidos
+    const nombres = nombre.value.split(" ");
+    const apellidos = apellido.value.split(" ");
+    if(nombres.length > 2 || apellidos.length > 2){alert("Debes ingresar 2 nombres y 2 apellidos");return;}
+
     if((nombre.value == "") || apellido.value == ""){
         // alert("Error! Campos vacios");
         mensajeInformacion("Campleta todos los campos.");
