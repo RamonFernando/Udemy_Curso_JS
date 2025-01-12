@@ -50,11 +50,11 @@ namespace SimpleCRUD {
                         if (int.TryParse(Console.ReadLine(), out int idActualizar)) {   // Convierte la entrada a un entero y la almacena en idActualizar
                             var persona = personas.Find(p => p.Id == idActualizar);     // Busca la persona por ID con Find: busca el primer elemento que cumpla la condicion o devuelve null
                             
+                            
                             if (persona != null) {                                      // Si la persona fue encontrada o no es null
                                 Console.Write("Ingresa el nuevo nombre: ");
                                 string nuevoNombre  = Console.ReadLine();
-                                if (personas.Exists(p => p.Nombre == nuevoNombre)) { Console.WriteLine("Ya existe una persona con ese nombre."); break; }
-                                persona.Nombre = nuevoNombre;                           // Actualiza el nombre. Metodo: personas.Add(new Persona { Id = contadorId++, Nombre = nombre });
+                                if (personas.Exists(p => p.Nombre == nuevoNombre)) { Console.WriteLine("Ya existe una persona con ese nombre."); break; } ;
                                 Console.WriteLine("Persona actualizada exitosamente.");
                             } else {
                                 Console.WriteLine("Persona no encontrada.");

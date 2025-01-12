@@ -18,7 +18,7 @@ function agregarPersona(){
         {alert("La persona ya existe!"); return;}
 
     if(!validarMaximoNombresApellidos(nombre.value, apellido.value))
-        {alert("Debes ingresar máximo 2 nombres y 2 apellidos"); return;}
+        {alert("Debes ingresar máximo 4 nombres y 2 apellidos"); return;}
 
     if((nombre.value.length + apellido.value.length) > 50)
         {alert("El nombre y apellidos deben tener máximo 50 caracteres");return;}
@@ -30,7 +30,7 @@ function agregarPersona(){
     } else {
         alert("Completa todos los campos.");
     }
-    mostrarPersonas(nombre, apellido);
+    mostrarPersonas();
 }
 function actualizarPersona(){
     let numero = parseInt(prompt("Ingrese el número de la persona que desea actualizar"));

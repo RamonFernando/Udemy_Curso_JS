@@ -29,7 +29,6 @@ namespace SimpleCRUD {
                         Console.Write("Ingresa el nombre: ");
                         string nombre = Console.ReadLine();
                         if (nombre == "" || string.IsNullOrWhiteSpace(nombre)) {Console.WriteLine("El nombre no puede estar vacio."); break;}
-                        if (personas.Exists(p => p.Nombre == nombre)) {Console.WriteLine("Ya existe una persona con ese nombre."); break;}
                         personas.Add(new Persona { Id = contadorId++, Nombre = nombre }); // Agrega un nuevo elemento y incrementa el contador
                         Console.WriteLine("Persona creada exitosamente.");
                         break;
@@ -46,15 +45,12 @@ namespace SimpleCRUD {
                     case "3":
                         // Actualizar
                         Console.Write("Ingresa el ID de la persona a actualizar: ");
-
-                        if (int.TryParse(Console.ReadLine(), out int idActualizar)) {   // Convierte la entrada a un entero y la almacena en idActualizar
+                        if (int.TryParse(Console.ReadLine(), out int idActualizar)) {   // Convierte la entrada a un entero
                             var persona = personas.Find(p => p.Id == idActualizar);     // Busca la persona por ID con Find: busca el primer elemento que cumpla la condicion o devuelve null
                             
-                            if (persona != null) {                                      // Si la persona fue encontrada o no es null
+                            if (persona != null) {
                                 Console.Write("Ingresa el nuevo nombre: ");
-                                string nuevoNombre  = Console.ReadLine();
-                                if (personas.Exists(p => p.Nombre == nuevoNombre)) { Console.WriteLine("Ya existe una persona con ese nombre."); break; }
-                                persona.Nombre = nuevoNombre;                           // Actualiza el nombre. Metodo: personas.Add(new Persona { Id = contadorId++, Nombre = nombre });
+                                persona.Nombre = Console.ReadLine();
                                 Console.WriteLine("Persona actualizada exitosamente.");
                             } else {
                                 Console.WriteLine("Persona no encontrada.");
@@ -68,12 +64,11 @@ namespace SimpleCRUD {
                         // Eliminar
                         Console.Write("Ingresa el ID de la persona a eliminar: ");
                         string id = Console.ReadLine();
-                        
-                        if (int.TryParse(id, out int idEliminar)) {                     // Convierte la entrada a un entero y la almacena en idEliminar
-                            var persona = personas.Find(p => p.Id == idEliminar);       // Busca la persona por ID con Find
+                        if (id != null && int.TryParse(id, out int idEliminar)) { // Convierte la entrada a un entero
+                            var persona = personas.Find(p => p.Id == idEliminar);
                             
                             if (persona != null) {
-                                personas.Remove(persona);                               // Elimina la persona
+                                personas.Remove(persona); // Elimina la persona
                                 Console.WriteLine("Persona eliminada exitosamente.");
                             } else {
                                 Console.WriteLine("Persona no encontrada.");
