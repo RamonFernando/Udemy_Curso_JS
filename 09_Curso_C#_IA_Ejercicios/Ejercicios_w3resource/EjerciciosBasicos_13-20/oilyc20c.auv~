@@ -61,6 +61,70 @@ namespace EjerciciosBasicos_13
             string intercambiar_caracteres(string parCadena) {
                 return parCadena.Substring(parCadena.Length - 1) + parCadena.Substring(1, parCadena.Length - 2) + parCadena.Substring(0, 1);
             }
+            // 17. Añadir Primer Carácter al Frente y a la Espalda
+            // Escriba un programa C# para crear una cadena a partir de una cadena dada (longitud 1 o más) con el primer carácter agregado en la parte delantera y trasera.
+
+            string stringText = "W3resourcE";
+            // Console.WriteLine("La cadena 'w3resource' con el primer y el ultimo caracter intercambiados es: " + intercambiar_caracteres(cadenaTexto));
+            Console.WriteLine("Cadena: " + stringText + " con el primer y el ultimo caracter intercambiados es: " + change_chars(stringText));
+
+            string change_chars(string parCadena) {
+                if (parCadena.Length < 1) { return parCadena; };
+                return parCadena.Substring(0, 1) + " - " + parCadena + " - " + parCadena.Substring(0, 1);
+            }
+
+            // 18. Compruebe el Par Positivo y Negativo
+            // Escriba un programa C# para verificar un par de enteros y devolver verdadero si uno es negativo y uno es positivo.
+
+            int num1 = 1;
+            int num2 = -2;
+            Console.WriteLine("Hay un numero positivo y un numero negativo? " + esPositivo(num1, num2));
+            
+            Boolean esPositivo(int numero1, int numero2){
+                if (numero1 > 0 && numero2 < 0 || numero1 < 0 && numero2 > 0){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            // 19. Suma o Triple Suma de Integers
+            // Escriba un programa C# para calcular la suma de dos enteros dados. Si dos valores son iguales, devuelva el triple de su suma.
+
+            int num3 = 2;
+            int num4 = 2;
+            if (num3 == num4)
+                Console.WriteLine("La suma de (2 numeros iguales * 3) {0} y {1} es: {2}", num3, num4, sumarNumeros(num3, num4));
+             else 
+                Console.WriteLine("La suma de {0} y {1} es: {2}", num3, num4, sumarNumeros(num3, num4));
+            
+            int sumarNumeros(int numero1, int numero2) {
+                int result  = (numero1 == numero2) ? (3 * (numero1 + numero2)) : (numero1 + numero2);
+                return result;
+            }
+
+            // 20.Diferencia Absoluta o Doble
+            // Escribe un programa C# para obtener el valor absoluto de la diferencia entre dos números dados.
+            // Devuelve el doble del valor absoluto de la diferencia si el primer número es mayor que el segundo número.
+            int num5 = 15;
+            int num6 = 10;
+            if (num5 > num6) {
+                Console.WriteLine("La diferencia absoluta de {0} y {1} es: {2} (Si el primer numero es mayor se multiplica por 2)", num5, num6, diferenciaAbsoluta(num5, num6));
+            }
+            else {
+                Console.WriteLine("La diferencia absoluta de {0} y {1} es: {2}", num5, num6, diferenciaAbsoluta(num5, num6));
+            }
+
+            int diferenciaAbsoluta(int numeroAbs, int numeroAbs2){
+                int resultado = 0;
+                if (numeroAbs > numeroAbs2) 
+                    resultado = 2 * Math.Abs(numeroAbs - numeroAbs2);
+                else 
+                    resultado = Math.Abs(numeroAbs - numeroAbs2);
+                
+                return resultado;
+            }
+
 
             Console.ReadKey();
         }
