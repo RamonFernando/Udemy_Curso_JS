@@ -75,36 +75,24 @@ namespace EjerciciosBasicos_21_30
             // 26. Suma de los Primos 500 Primos
             // Escriba un programa C# para calcular la suma de los primeros 500 números primos.
 
-            Console.WriteLine("Suma de los 500 primos"); // Salida: 824693
-              
-            int sumaPrimos = 0;
-            int numFinalPrimo = 500;
-            int cont = 1;
-            int numeroPrimo = 2;
-         
-            // Comprueba si un número es primo
-            bool esPrimo(int numPrimo) {
-                for (int i = 2; i <= Math.Sqrt(numPrimo); i++) {
-                    if (numPrimo % i == 0) 
-                        return false;
+            Console.WriteLine("Suma de los 500 primos");
+            int sum = 0;
+            int numFinal = 500;
+            for (int i = 2; i <= numFinal; i++) {
+                bool esPrimo = true;
+                for (int j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        esPrimo = false;
+                        break;
+                    }
                 }
-                return true;
-            }
-            while (cont <= numFinalPrimo){
-                if (esPrimo(numeroPrimo)) {
-                    // Console.WriteLine(cont + ": " + numeroPrimo); // muestra los primos
-                    cont++;
-                    sumaPrimos += numeroPrimo;
+                if (esPrimo) {
+                    sum += i;
                 }
-                numeroPrimo++;  
             }
-            Console.WriteLine("Suma de los {0} primeros numeros primos: {1}", numFinalPrimo, sumaPrimos);
-            
-            
-            
-            
-            
-            
+            if (sum != 0) {
+                Console.WriteLine("Suma de los 500 primos: " + sum);
+            }
 
 
             Console.ReadKey();

@@ -61,50 +61,14 @@ namespace EjerciciosBasicos_21_30
 
             // 25. Imprimir Números impares 1 a 99
             //Escriba un programa C# para imprimir números impares del 1 al 99. Imprime un número por línea.
-            Console.WriteLine("Imprimir numeros impares del 1 al 99");
-            mostrarImpares(9);
 
-            void mostrarImpares(int numFinal) {
+            int mostrarImpares(int numFinal) {
                 for (int i = 1; i <= numFinal; i++) {
                     if (i % 2 != 0) 
-                        Console.WriteLine(i);
+                        return i;     
                 }
-                
+                return 0;
             }
-
-            // 26. Suma de los Primos 500 Primos
-            // Escriba un programa C# para calcular la suma de los primeros 500 números primos.
-
-            Console.WriteLine("Suma de los 500 primos"); // Salida: 824693
-              
-            int sumaPrimos = 0;
-            int numFinalPrimo = 500;
-            int cont = 1;
-            int numeroPrimo = 2;
-         
-            // Comprueba si un número es primo
-            bool esPrimo(int numPrimo) {
-                for (int i = 2; i <= Math.Sqrt(numPrimo); i++) {
-                    if (numPrimo % i == 0) 
-                        return false;
-                }
-                return true;
-            }
-            while (cont <= numFinalPrimo){
-                if (esPrimo(numeroPrimo)) {
-                    // Console.WriteLine(cont + ": " + numeroPrimo); // muestra los primos
-                    cont++;
-                    sumaPrimos += numeroPrimo;
-                }
-                numeroPrimo++;  
-            }
-            Console.WriteLine("Suma de los {0} primeros numeros primos: {1}", numFinalPrimo, sumaPrimos);
-            
-            
-            
-            
-            
-            
 
 
             Console.ReadKey();

@@ -78,30 +78,43 @@ namespace EjerciciosBasicos_21_30
             Console.WriteLine("Suma de los 500 primos"); // Salida: 824693
               
             int sumaPrimos = 0;
-            int numFinalPrimo = 500;
-            int cont = 1;
-            int numeroPrimo = 2;
-         
+            int numFinalPrimo = 50;
+            int cont = 0;
+            Console.WriteLine(esPrimo(numFinalPrimo));
+
             // Comprueba si un número es primo
             bool esPrimo(int numPrimo) {
+              
                 for (int i = 2; i <= Math.Sqrt(numPrimo); i++) {
                     if (numPrimo % i == 0) 
                         return false;
                 }
                 return true;
             }
-            while (cont <= numFinalPrimo){
-                if (esPrimo(numeroPrimo)) {
-                    // Console.WriteLine(cont + ": " + numeroPrimo); // muestra los primos
-                    cont++;
-                    sumaPrimos += numeroPrimo;
-                }
-                numeroPrimo++;  
+            // Mostrar los primos entre 2 y numFinalPrimo
+            void mostrarPrimos(int numero) {
+                for (int j = 1; j <= 10; j++) {
+                    if (esPrimo(j))
+                        Console.WriteLine(j);
+                    }
+                /*for (int i = 2; i <= numero; i++) {
+                    if (esPrimo(i))
+                        Console.WriteLine(i);
+                }*/
             }
-            Console.WriteLine("Suma de los {0} primeros numeros primos: {1}", numFinalPrimo, sumaPrimos);
+            mostrarPrimos(numFinalPrimo);
+
+            Console.WriteLine("Suma de los {0} primos", numFinalPrimo);
+            // Sumar los primos
+            int sumarPrimos(int numeroFinal){
+                for (int i = 1; i <= numeroFinal; i++){
+                    if (esPrimo(i))
+                        sumaPrimos += i;
+                 }
+                return sumaPrimos;
+            }
             
-            
-            
+            Console.WriteLine(sumarPrimos(5));
             
             
             

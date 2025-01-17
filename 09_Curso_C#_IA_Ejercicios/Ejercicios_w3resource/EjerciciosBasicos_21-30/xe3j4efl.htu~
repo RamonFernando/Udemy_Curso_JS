@@ -77,34 +77,17 @@ namespace EjerciciosBasicos_21_30
 
             Console.WriteLine("Suma de los 500 primos"); // Salida: 824693
               
-            int sumaPrimos = 0;
-            int numFinalPrimo = 500;
-            int cont = 1;
-            int numeroPrimo = 2;
-         
-            // Comprueba si un número es primo
-            bool esPrimo(int numPrimo) {
-                for (int i = 2; i <= Math.Sqrt(numPrimo); i++) {
-                    if (numPrimo % i == 0) 
-                        return false;
-                }
-                return true;
+            int sum = 0;
+            int numFinalPrimo = 5;
+            Console.WriteLine(esPrimo(10));
+
+            int esPrimo(int numPrimo) {
+                int raiz = Convert.ToInt32(Math.Sqrt(numPrimo));
+                return raiz;
             }
-            while (cont <= numFinalPrimo){
-                if (esPrimo(numeroPrimo)) {
-                    // Console.WriteLine(cont + ": " + numeroPrimo); // muestra los primos
-                    cont++;
-                    sumaPrimos += numeroPrimo;
-                }
-                numeroPrimo++;  
-            }
-            Console.WriteLine("Suma de los {0} primeros numeros primos: {1}", numFinalPrimo, sumaPrimos);
             
             
-            
-            
-            
-            
+            // Console.WriteLine(sum);
 
 
             Console.ReadKey();

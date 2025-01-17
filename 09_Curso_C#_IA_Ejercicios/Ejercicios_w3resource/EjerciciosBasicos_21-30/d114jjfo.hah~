@@ -78,29 +78,49 @@ namespace EjerciciosBasicos_21_30
             Console.WriteLine("Suma de los 500 primos"); // Salida: 824693
               
             int sumaPrimos = 0;
-            int numFinalPrimo = 500;
+            int numFinalPrimo = 10;
             int cont = 1;
             int numeroPrimo = 2;
-         
+            Console.WriteLine(esPrimo(numFinalPrimo));
+
             // Comprueba si un número es primo
             bool esPrimo(int numPrimo) {
+              
                 for (int i = 2; i <= Math.Sqrt(numPrimo); i++) {
                     if (numPrimo % i == 0) 
                         return false;
                 }
                 return true;
             }
-            while (cont <= numFinalPrimo){
+            // Mostrar los primos entre 2 y numFinalPrimo
+            Console.WriteLine("Los {0} primeros primos a partir del 2", numFinalPrimo);
+            /*void mostrarPrimos() {
+                for (int i = 2; i <= 10; i++) {
+                    if (esPrimo(i))
+                        Console.WriteLine(i);
+                }
+            }*/
+     
+            while (cont <= 3){
                 if (esPrimo(numeroPrimo)) {
-                    // Console.WriteLine(cont + ": " + numeroPrimo); // muestra los primos
+                    Console.WriteLine(cont + ": " + numeroPrimo);
                     cont++;
                     sumaPrimos += numeroPrimo;
                 }
-                numeroPrimo++;  
+                numeroPrimo++;
+                
             }
-            Console.WriteLine("Suma de los {0} primeros numeros primos: {1}", numFinalPrimo, sumaPrimos);
-            
-            
+
+            Console.WriteLine("Suma los {0} primeros numeros primos apartir del 2", numFinalPrimo);
+            // Sumar los primos
+            /*int sumarPrimos(int numeroP){
+                for (int i = 1; i <= numeroP; i++){
+                    if (esPrimo(i))
+                        numeroP += i;
+                 }
+                return numeroP;
+            }*/
+            Console.WriteLine(sumaPrimos);
             
             
             
