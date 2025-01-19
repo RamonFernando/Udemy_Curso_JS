@@ -9,7 +9,8 @@ namespace EjerciciosBasicos_21_30
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {   
+            // w3resource.com/csharp-exercises/basic-exercises-21-30/
             // 21. Verifique 20 o Sum Equals 20
             // Escriba un programa C# para verificar la suma de los dos enteros dados.
             // Devuelva verdadero si uno de los enteros es 20 o si su suma es 20.
@@ -99,12 +100,34 @@ namespace EjerciciosBasicos_21_30
                 numeroPrimo++;  
             }
             Console.WriteLine("Suma de los {0} primeros numeros primos: {1}", numFinalPrimo, sumaPrimos);
-            
-            
-            
-            
-            
-            
+
+            // 27. Suma de Dígitos en Entero
+            // Escriba un programa C# y calcule la suma de los dígitos de un número entero.
+            int numero = 1234;
+            int sumaDigitos = 0;
+
+            while (numero > 0) {
+                int digito = numero % 10;   // obtiene el ultimo digito del numero
+                sumaDigitos += digito;      // suma cada digito en cada pasada del bucle
+                numero /= 10;
+            }
+            Console.WriteLine("Suma de los digitos del numero: " + sumaDigitos); // Salida: 10 (1+2+3+4)
+
+            // 28.Palabras Inversas en la Sentencia
+            // Escribe un programa C# para revertir las palabras de una oración.
+            string oracion = "Escriba un programa C# para revertir las palabras de una oración.";
+            string[] palabrasOracion = oracion.Split(' ');
+            string oracionInversa = "";
+
+            for (int i = palabrasOracion.Length - 1; i >= 0; i--) {
+                oracionInversa += palabrasOracion[i] + " ";
+            }
+            Console.WriteLine("Oracion: " + oracion);
+            Console.WriteLine("Oracion inversa: " + oracionInversa);
+
+
+
+
 
 
             Console.ReadKey();
