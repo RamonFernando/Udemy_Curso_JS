@@ -50,9 +50,10 @@ function actualizarPersona(){
     
     if(nuevoNombre.trim() && nuevoApellido.trim()) {
         if(!regex.test(nuevoNombre) || !regex.test(nuevoApellido)) {alert("Caracteres no permitidos"); return;}
-        alert(`Persona ${numero} ${personas[numero -1].nombre} ${personas[numero -1].apellido} sera actualizada a:`);
+        
+        if(confirm(`Estas seguro de actualizar a la persona ${personas[numero -1].nombre} ${personas[numero -1].apellido} a ${nuevoNombre} ${nuevoApellido}`))
+            {alert("Persona actualizada con exito!");} else {alert("Persona no actualizada"); return;}
         personas.splice(numero -1, 1, new Persona(nuevoNombre.trim(), nuevoApellido.trim()));
-        alert(`Persona ${nuevoNombre} ${nuevoApellido}`);
     }else{
         alert("Error! Persona no actualizada, campos vacios");
     }
@@ -62,7 +63,8 @@ function borrarPersona(){
     let num = parseInt(prompt("Ingrese el número de la persona que desea eliminar"));
     if(num == "" || isNaN(num) || num < 1 || num > personas.length)
         {alert("Error, numero no valido o nulo"); return;}
-    alert(`Se ha eliminado a la persona ${num} ${personas[num-1].nombre} ${personas[num-1].apellido} con exito!`);
+    if(confirm(`Estas seguro de eliminar a la persona ${personas[num-1].nombre} ${personas[num-1].apellido}`))
+        {alert("Persona eliminada con exito!");} else {alert("Persona no eliminada"); return;}
     personas.splice(num -1, 1);
     mostrarPersonas();
 }
