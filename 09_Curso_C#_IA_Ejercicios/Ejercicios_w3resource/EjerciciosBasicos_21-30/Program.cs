@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -125,10 +126,30 @@ namespace EjerciciosBasicos_21_30
             Console.WriteLine("Oracion: " + oracion);
             Console.WriteLine("Oracion inversa: " + oracionInversa);
 
+            // 29. Tamaño de archivo en Bytes
+            // Escriba un programa C# para encontrar el tamaño de un archivo especificado en bytes.
+            FileInfo archivo = new FileInfo(@"C:\Users\Ramon\Ramon Dropbox\Ramon Perez\PC\Desktop\curso_udemy_JS\09_Curso_C#_IA_Ejercicios\Ejercicios_w3resource\EjerciciosBasicos_21-30\Program.cs");
+            Console.WriteLine("Tamanio del archivo: " + archivo.Length + " bytes");
+
+            // 30. Hexadecimal a Decimal
+            // Escriba un programa C# para convertir un número hexadecimal en un número decimal.
+
+            string hexval = "4B0";
+
+            // Display the original hexadecimal number
+            Console.WriteLine("Hexadecimal number: " + hexval);
+
+            // Convert the hexadecimal string 'hexval' to its decimal equivalent
+            int decValue = int.Parse(hexval, System.Globalization.NumberStyles.HexNumber);
+
+            // Display a message indicating conversion to different number systems
+            Console.WriteLine("Convert to-");
+
+            // Display the decimal value obtained from the hexadecimal conversion
+            Console.WriteLine("Decimal number: " + decValue);
 
 
-
-
+            
 
             Console.ReadKey();
 

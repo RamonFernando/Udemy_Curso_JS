@@ -53,7 +53,7 @@ function read($conn) {
             while($row = $resultado->fetch_assoc()){
                 echo "<p>[Usuario: " . $row['id'] . "] Nombre: " . $row['nombre'] . ", Email: " . $row['email'] . "</p>";
             }
-        } else {echo "<p>No se han encontrado registros</p>";}
+        } else {echo "<h2>No se han encontrado registros</h2>";}
     }
 }
 // UPDATE
