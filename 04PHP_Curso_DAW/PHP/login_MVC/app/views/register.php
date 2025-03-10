@@ -3,7 +3,7 @@
 <html label="es">
 <head>
     <title>Registro</title>
-    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
     <meta charset="UTF-8" viewport="width=device-width, initial-scale=1.0">
 </head>
 <body>
