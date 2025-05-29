@@ -71,6 +71,9 @@ function actualizarPersona(){
 function borrarPersona(){
     let num = parseInt(prompt("Ingresa el id que deseas eliminar."));
     if(num < 1 || num > personas.length || isNaN(num)){alert("Error! Número no valido o nulo.");return;};
+    
+    if(confirm(`Estas seguro de eliminar a la persona ${personas[num-1].nombre} ${personas[num-1].apellido}`))
+        {console.log("Persona eliminada con exito!");} else {console.log("Persona no eliminada"); return;}
     personas.splice(num-1, 1);
     mostrarPersonas();
 }

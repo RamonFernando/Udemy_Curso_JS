@@ -13,7 +13,7 @@ function mostrarPersonas(){
     if(personas.length == 0) document.getElementById('personas').innerHTML = '<h3>No hay personas en la lista</h3>';
 }
 function agregarPersona(){
-    const {nombre, apellido} = document.forms['forma'];
+    const {nombre, apellido} = document.forms['forma']; // Desestructuracion
     if(personas.find(p => p.nombre.trim() === nombre.value.trim() && p.apellido.trim() === apellido.value.trim()))
         {alert("La persona ya existe!"); return;}
 

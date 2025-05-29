@@ -1,0 +1,5 @@
+<?php
+
+    // Ejercicio 1
+    
+?>
