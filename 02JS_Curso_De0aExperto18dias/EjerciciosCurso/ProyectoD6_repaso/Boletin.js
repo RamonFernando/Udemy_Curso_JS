@@ -1,5 +1,7 @@
+// 1. Array
 let calificaciones = [7, 4, 9.97, 9, 8.5, 3.8, 9];
 
+// 2. Funciones
 function listarNotas() {
     let listaNotas = document.getElementById("listaNotas");
     listaNotas.innerHTML = "";
