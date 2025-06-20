@@ -27,7 +27,7 @@ function preguntarSexo(){
     }else if(miSexo == 'm'){
         return 'm';
     }else{
-        return mensajeIncorrecto; 
+        return mensajeIncorrecto;
     }
 }
 /* Esta funcion llama a la funcion preguntarSexo para evaluar si es hombre o mujer y 
