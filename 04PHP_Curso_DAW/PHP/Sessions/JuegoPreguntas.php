@@ -66,7 +66,7 @@ if(!isset($_SESSION['sesion']) && !empty($_SESSION['sesion'])) {
         }
     ?>
     <label for="respuestaProfesor">Respuesta del profesor:</label><br>
-    <input type="text" name="respuestaProfesor" placehol+der="Respuesta" required><br><br>
+    <input type="text" name="respuestaProfesor" placeholder="Respuesta" required><br><br>
     <input type="submit" class="boton" value="Enviar">
     </form>
     <?php

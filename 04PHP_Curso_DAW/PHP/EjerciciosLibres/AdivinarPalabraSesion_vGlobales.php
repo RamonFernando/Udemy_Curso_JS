@@ -39,7 +39,7 @@ $GLOBALS['g_respuesta'] = "computer";
     echo "<p>$pregunta</p>";
     ?>
     
-    <form action="Ejercicio8Ss_vGlobal.php" method="post">
+    <form action="AdivinarPalabraSesion_vGlobales.php" method="post">
         <label for="respuesta">Respuesta: </label>
         <input type="text" name="respuesta" placeholder="Introduce la respuesta" required><br><br>
         <input type="submit" class="boton" value="Enviar">

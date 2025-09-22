@@ -24,7 +24,7 @@
 </head>
 <body>
     <h2>Tabla de multiplicar</h2>
-    <form action="tablaMultiplicarCabecera.php" method="post">
+    <form action="AplicacionMultiplicar.php" method="post">
         <label for="numero">Numero: </label><br>
         <input type="number" name="numero" min="1" required placeholder="Numero"><br><br>
         <label for="numeroContador">Columnas: </label><br>
