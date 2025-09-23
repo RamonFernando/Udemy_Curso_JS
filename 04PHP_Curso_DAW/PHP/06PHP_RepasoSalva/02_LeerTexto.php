@@ -86,12 +86,22 @@ mejor y el peor. (Mas avanzado)-->
             // Divide la cadena por el delimitador ";" pos: 0(nombre) y pos: 1(nota)
             $nombre = trim($delimitador[0]);
             $nota = trim($delimitador[1]);
+            $nota = floatval($nota);
+            $notaMayor = $delimitador[1];
+            $notaMenor = $delimitador[1];
 
             $notaMedia += $nota; // Sumamos las notas para calcular la media
 
             // comprobamos que el alumno y la nota no esten vacios, si lo estan no se muestra y el bucle se repite
             if (empty($nombre) || empty($nota)) continue;
             if(count($delimitador) < 2) continue; // Comprobamos que el array tenga al menos dos elementos
+            
+            // buscamos la nota mayor
+            if ($delimitador[1] > $notaMayor) $notaMayor = $delimitador[1];
+            
+            // buscamos la nota menor
+            if ($delimitador[1] < $notaMenor) $notaMenor = $delimitador[1];
+            
             
 
             if ($nota >= 5) {
@@ -102,10 +112,13 @@ mejor y el peor. (Mas avanzado)-->
                 echo "El alumno " . strtoupper($nombre) . " <strong>no</strong> ha superado el 5 con una nota de " . $nota . "<br>";
                 echo "<br>";
             }
+            
         }
         $notaMedia = $notaMedia/count($datos_txt);
         echo "<br>";
         echo "La media de notas del curso es: " . number_format($notaMedia, 2) . "<br>";
+        echo "La nota mayor es: " . $notaMayor . "<br>";
+        echo "La nota menor es: " . $notaMenor . "<br>";
         echo "<br>";
 
         fclose($manejador); // Cerrar el archivo en modo escritura
