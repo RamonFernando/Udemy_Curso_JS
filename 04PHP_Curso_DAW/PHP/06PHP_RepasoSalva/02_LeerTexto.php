@@ -34,10 +34,10 @@ mejor y el peor. (Mas avanzado)-->
     if ($manejadorLectura) {
         
         // Iterar sobre cada línea del archivo hasta que no haya más
-        while (!feof($manejadorLectura)) {     // comprueba si se ha llegado al final del archivo
-            $linea = fgets($manejadorLectura); // Leer una línea
-            $linea = trim($linea);          // eliminar espacios al principio y al final
-            if ($linea === '') continue;            // saltar líneas vacías
+        while (!feof($manejadorLectura)) {      // comprueba si se ha llegado al final del archivo
+            $linea = fgets($manejadorLectura);  // Leer una línea
+            $linea = trim($linea);              // eliminar espacios al principio y al final
+            if ($linea === '') continue;                // saltar líneas vacías
 
            $datos_txt[] = $linea;          // Añadir la linea al array
         }
