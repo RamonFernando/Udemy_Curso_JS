@@ -11,6 +11,7 @@ Salida de muestra:
 5
 12-->
 <?php
+echo "<h1>Ejercicio 1 Algoritmos</h1><br>";
     $num1 = 1;
     $num2 = 2;
 
@@ -25,5 +26,5 @@ Salida de muestra:
         return $result;
     }
 
-    echo sumar($num1, $num2);
+    echo "El resultado es: " . sumar($num1, $num2);
 ?>
