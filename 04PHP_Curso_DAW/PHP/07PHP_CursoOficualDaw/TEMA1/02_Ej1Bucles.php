@@ -11,7 +11,7 @@ $numbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     for ($i = 1; $i <= count($numbers); $i++){
         
         // Comprobamos que la posicion del array no sea 0, 1 o 10 para mostrar el guión
-        if($i != $numbers[0] &&  $i != $numbers[1] && $i != $numbers[9])
+        if($i != $numbers[0])
             echo " - ";
         
         echo $i . " ";
