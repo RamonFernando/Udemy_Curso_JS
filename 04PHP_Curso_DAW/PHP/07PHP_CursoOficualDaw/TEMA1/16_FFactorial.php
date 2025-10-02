@@ -4,6 +4,7 @@ Escribe una función para calcular el factorial de un número
 (un número entero no negativo). La función acepta el número como argumento.
 <?php
     echo "16_Funciones Factorial";
+    echo "----------------------";
 
     // Factorial (4*3*2*1)
 
