@@ -7,7 +7,6 @@ cinco imprima "Buzz". Para números que son múltiplos de tres y cinco, imprima
 <?php
 echo "13_Ej11Loops <br>";
 
-
 // Variables
 $f = "Fizz"; // multiplos de 3
 $b = "Buzz"; // multiplos de 5
